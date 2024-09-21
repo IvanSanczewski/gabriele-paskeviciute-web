@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("/assets/kokedama.png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-item {
+    margin: 1em;
+
+    color: white;
+    font-size: 1.08em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    align-self: flex-end;
+}
+
+.cards {
+    display: flex;
+    
+    margin:8em 0 0 8em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 12%;
+    min-height: 350px;
+
+    background-color: aquamarine;
+    border-radius: 1em;
+
+    margin-right: 5em;
+}
+
+.card-header {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5em;
+}
