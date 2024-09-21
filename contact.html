@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gabriele Paskeviciute</title>
+
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    
+<body class="contact-page">
+    <header class="nav-menu">
+        <div class="menu">
+            <a href="about.html" class="menu-item">about me</a>
+            <a href="contact.html" class="menu-item">contact</a>
+            <a href="shop.html" class="menu-item">shop</a>
+        </div>
+        <div class="menu-item menu">
+            <img class="logo" src="./assets/logo.png" alt="logo">   
+        </div>
+    </header> 
+    <main>
+        <div class="container">
+
+            <form class="form">
+                <!-- <label for="username">name</label> -->
+                <input id="username" type="text" name="username" placeholder="Enter your name">
+                
+                <!-- <label for="email">email</label> -->
+                <input id="email" type="email" name="email" placeholder="Enter your email">
+                
+                
+                <div class="question">
+                    <p>What do you want to ask about?</p>
+                    <div>
+                        <input id="choice" type="radio" name="choice">
+                        <label for="choice">Kokedama Workshop</label>
+                    </div>
+                    <div>
+                        <input id="choice" type="radio" name="choice">
+                        <label for="choice">Buy Kokedama</label>
+                    </div>
+                    <div>
+                        <input id="choice" type="radio" name="choice">
+                        <label for="choice">Buy Cuflinks</label>
+                    </div>
+                </div>
+                <textarea id="question" name="question"  cols="30" rows="1" placeholder="Enter your question..."></textarea>
+                <input class="btn" type="button" value="Submit">
+            </form>
+        </div>
+    </main>
 </body>
 </html>

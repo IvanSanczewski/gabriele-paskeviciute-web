@@ -8,13 +8,31 @@
     font-style: normal;
 }
 
+a{
+    text-decoration: none;
+}
+
+input, textarea {
+    padding: .4em;
+
+    font-size: .65rem;
+
+    background-color: rgba(255, 255, 255, 0);
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid  rgba(27, 105, 38, 0.856);;
+    /* border-bottom: 1px solid rgb(85, 85, 85); */
+    border-left: none;
+
+}
+
 /*.roboto-condensed-<uniquifier> {
     // <uniquifier>: Use a unique and descriptive class name
     // <weight>: Use a value from 100 to 900    
 }
 */
 
-body { 
+.home-page { 
     width: 100vw;
     height: 100vh;
     
@@ -23,6 +41,17 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
+.contact-page { 
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("/assets/ISP_KOKEDAMA_test.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
 
 .nav-menu {
     display: flex;
@@ -43,7 +72,7 @@ body {
     color: white;
     font-size: 1.08em;
     letter-spacing: .15em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     
 }
 
@@ -70,7 +99,6 @@ body {
     min-width: 235px;
     min-height: 350px;
     
-    /*background-color: rgb(7, 70, 49);*/
     border-radius: 1em;
     
     margin-right: 5em;
@@ -95,4 +123,52 @@ body {
     margin-bottom: 4em;
     
     color: white
+}
+
+.container {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-content: space-between; */
+
+    width: 25vw;
+    height: 375px;
+
+    margin-left: 10vw;
+    padding: 2em;
+
+    font-size: .8rem;
+
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 0.5em;
+
+}
+
+.question {
+    line-height: 1.5em;
+}
+
+.question>div {
+    padding-left: 1.5em;
+}
+
+.btn {
+    align-self: center;
+
+    width: 35%;
+    margin-top: 1em;
+    padding: .45em;
+
+    color: whitesmoke;
+    background-color: rgba(27, 105, 38, 0.8);
+
+    border: none;
+    border-radius: .35em;
+
+    cursor: pointer;
 }
