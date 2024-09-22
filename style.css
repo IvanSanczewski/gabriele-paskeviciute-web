@@ -13,6 +13,7 @@ a{
 }
 
 input, textarea {
+    display: inline;
     padding: .4em;
 
     font-size: .65rem;
@@ -20,11 +21,12 @@ input, textarea {
     background-color: rgba(255, 255, 255, 0);
     border-top: none;
     border-right: none;
-    border-bottom: 1px solid  rgba(27, 105, 38, 0.856);;
+    border-bottom: 1px solid  rgba(27, 105, 38, 0.856);
     /* border-bottom: 1px solid rgb(85, 85, 85); */
     border-left: none;
 
 }
+
 
 /*.roboto-condensed-<uniquifier> {
     // <uniquifier>: Use a unique and descriptive class name
@@ -32,6 +34,9 @@ input, textarea {
 }
 */
 
+
+/* PAGE BACKGROUND IMAGES  */
+/* PAGE BACKGROUND IMAGES  */
 .home-page { 
     width: 100vw;
     height: 100vh;
@@ -39,8 +44,8 @@ input, textarea {
     background-image: url("/assets/kokedama.png"); 
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
     background-position: center;
+    overflow: hidden;
 }
 
 .contact-page { 
@@ -51,7 +56,6 @@ input, textarea {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    
     overflow: hidden;
 }
 
@@ -63,11 +67,12 @@ input, textarea {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    
     overflow: hidden;
 }
 
 
+/* MENU */
+/* MENU */
 .nav-menu {
     display: flex;
     /* flex-direction: column; */
@@ -100,6 +105,9 @@ input, textarea {
     align-self: flex-start;
 }
 
+
+/* COMMON ELEMENTS */
+/* COMMON ELEMENTS */
 .container {
     display: flex;
     /* justify-content: center; */
@@ -108,12 +116,9 @@ input, textarea {
     padding-left: 10vw;
 }
 
-/* .cards {
-    display: flex;
-    
-    margin:4em 0 0 8em;
-} */
 
+/* HOME */
+/* HOME */
 .card {
     display: flex;
     flex-direction: column;
@@ -151,6 +156,8 @@ input, textarea {
 }
 
 
+/* CONTACT */
+/* CONTACT */
 .form, .about {
     display: flex;
     flex-direction: column;
@@ -177,7 +184,51 @@ input, textarea {
 }
 
 .question>div {
+    display: flex;
+    flex-direction: column;
+
     padding-left: 1.5em;
+}
+
+.choice-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.radio-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 16px;
+    height: 16px;
+    
+    margin-right: 1rem;
+    
+    border: 2px solid rgba(27, 105, 38);
+    border-radius: 50%;
+
+    opacity: 1;
+}
+
+.radio-check {
+    display: inline-block;
+    
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50%;
+    background-color: rgba(27, 105, 38);
+
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.radio-btn input {
+    display: none;
+}
+
+.radio-btn input:checked + .radio-check {
+    opacity: 1;
 }
 
 .btn {
@@ -197,6 +248,9 @@ input, textarea {
     cursor: pointer;
 }
 
+
+/* ABOUT ME */
+/* ABOUT ME */
 .about {
     color: whitesmoke;
     font-weight: 300;
