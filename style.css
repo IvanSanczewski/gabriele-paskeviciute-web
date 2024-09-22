@@ -96,6 +96,7 @@ input, textarea {
     width: 65px;
     height: 65px;
     
+    margin-right: 2em;
     align-self: flex-start;
 }
 
