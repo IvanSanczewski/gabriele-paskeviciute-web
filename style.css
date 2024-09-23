@@ -176,7 +176,6 @@ input, textarea {
 
     background-color: rgba(255, 255, 255, 0.333);
     border-radius: 0.5em;
-
 }
 
 .question {
@@ -261,46 +260,3 @@ input, textarea {
     margin-top: 1em;;
 }
 
-
-
-
-.container-row {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card-dark {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2em;
-
-    background-color: rgba(204, 19, 19, 0.199);
-    border-radius: .5em;
-
-    width: 55%;
-}
-
-h2 {
-    color: blue;
-}
-
-.test {
-    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
-}
-
-.card-dark > p {
-    color: crimson;
-}
-
-.card-dark>h2 {
-    color: darkorange;
-}
-.card-dark>div>h2 {
-    background-color: greenyellow;
-    padding: -2em;
-}
-
-.test p+p {
-    color: blueviolet
-}
