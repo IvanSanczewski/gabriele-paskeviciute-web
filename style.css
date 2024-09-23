@@ -25,6 +25,7 @@ input, textarea {
     /* border-bottom: 1px solid rgb(85, 85, 85); */
     border-left: none;
 
+    cursor: pointer;
 }
 
 
@@ -220,6 +221,8 @@ input, textarea {
 
     opacity: 0;
     transition: opacity .5s ease;
+
+    cursor: pointer;
 }
 
 .radio-btn input {
@@ -233,20 +236,29 @@ input, textarea {
 .btn {
     align-self: center;
 
-    width: 35%;
+    width: 45%;
     margin-top: 1em;
-    padding: .45em;
+    padding: 1em;
+
+    text-transform: uppercase;
+    letter-spacing: .2em;
 
     text-align: center;
     color: whitesmoke;
     background-color: rgba(27, 105, 38, 0.8);
 
     border: none;
-    border-radius: .35em;
+    border-radius: 5em;
 
     cursor: pointer;
 }
 
+.btn:hover {
+
+    font-weight: 700;
+    color: white;
+    background-color: rgb(19, 77, 27);
+}
 
 /* ABOUT ME */
 /* ABOUT ME */
@@ -259,4 +271,3 @@ input, textarea {
 .about>div>p+p {
     margin-top: 1em;;
 }
-
