@@ -167,17 +167,14 @@ input:valid, textarea:valid {
     flex-direction: column;
     justify-content: space-around;
     /* align-content: space-between; */
-
     width: 33vw;
     height: 375px;
-    min-width: 405px;
+    /* min-width: 455px; */
     min-height: 390px;
-
+    max-width: 650px;
     /* margin-left: 10vw; */
     padding: 2em;
-
     font-size: .8rem;
-
     background-color: rgba(255, 255, 255, 0.333);
     border-radius: 0.5em;
 }
@@ -289,6 +286,8 @@ input:valid, textarea:valid {
         overflow-y: auto;
     }
     
+/* *** HOME *** */
+
     .home-page .container {
         display: flex;
         flex-flow: row wrap;
@@ -296,7 +295,7 @@ input:valid, textarea:valid {
         
         padding-left: 0;
     }
-    
+
     .card {     
         width: 35vw;
         height: 32vh;
@@ -307,23 +306,49 @@ input:valid, textarea:valid {
         
         margin-right: 0;
     }
+
+/* *** CONTACT *** */
+    .contact-page {
+        background-position: center;
+    }
+
+    
+    .form {        
+        width: 55vw;
+        min-width: 285px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
     body {
         height: 100%;
-        /* overflow-y: auto; */
     }
-
+    
     .home-page .container {
         gap: 2em;
     }
-        
+    
     .card {
         width: 75vw;
         height: 45vh;
         min-width: 285px;
         min-height: 350px;
     }
+    
+    /* *** CONTACT *** */
+    .contact-page {
+        height: 100vh;
+    }
+
+    .contact-page .container {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .form {
+        width: 75%;
+    }
+
 }
 
