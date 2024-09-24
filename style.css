@@ -8,6 +8,12 @@
     font-style: normal;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 a{
     text-decoration: none;
 }
@@ -24,7 +30,7 @@ input, textarea {
     border-bottom: 1px solid  rgba(27, 105, 38, 0.856);
     /* border-bottom: 1px solid rgb(85, 85, 85); */
     border-left: none;
-    
+
     cursor: pointer;
     outline: none;
 }
@@ -41,44 +47,32 @@ input:valid, textarea:valid {
 
 /*.roboto-condensed-<uniquifier> {
     // <uniquifier>: Use a unique and descriptive class name
-    // <weight>: Use a value from 100 to 900    
+    // <weight>: Use a value from 100 to 900
 }
 */
 
 
 /* PAGE BACKGROUND IMAGES  */
 /* PAGE BACKGROUND IMAGES  */
-.home-page { 
-    width: 100vw;
-    height: 100vh;
-    
-    background-image: url("/assets/kokedama.png"); 
+.home-page {
+    background-image: url("/assets/kokedama.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 }
 
-.contact-page { 
-    width: 100vw;
-    height: 100vh;
-    
-    background-image: url("/assets/ISP_KOKEDAMA_test.jpg"); 
+.contact-page {
+    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    overflow: hidden;
 }
 
-.about-page { 
-    width: 100vw;
-    height: 100vh;
-    
-    background-image: url("/assets/Gabriele-portrait-2.JPG"); 
+.about-page {
+    background-image: url("/assets/Gabriele-portrait-2.JPG");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    overflow: hidden;
 }
 
 
@@ -88,7 +82,7 @@ input:valid, textarea:valid {
     display: flex;
     /* flex-direction: column; */
     justify-content: space-between;
-    
+
     padding: 1em 5em;
     /*background-color: rgba(255, 255, 255, 0.219);*/
 }
@@ -100,18 +94,18 @@ input:valid, textarea:valid {
 
 .menu-item {
     margin: 1em;
-    
+
     color: white;
     font-size: 1.08em;
     letter-spacing: .15em;
     /* text-transform: uppercase; */
-    
+
 }
 
 .logo {
     width: 65px;
     height: 65px;
-    
+
     margin-right: 2em;
     align-self: flex-start;
 }
@@ -122,8 +116,7 @@ input:valid, textarea:valid {
 .container {
     display: flex;
     /* justify-content: center; */
-
-    margin-top: 2em;
+    margin: 2em 0;
     padding-left: 10vw;
 }
 
@@ -134,22 +127,22 @@ input:valid, textarea:valid {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    
+
     width: 15vw;
     height: 32vh;
     min-width: 285px;
     min-height: 350px;
-    
+
     border-radius: .5em;
-    
+
     margin-right: 2.5em;
 }
 
 .card-kokedama-img {
-    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg"); 
+    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
     background-size: cover;
     background-position: center;
-    
+
 }
 
 .card-cufflings-img {
@@ -162,7 +155,7 @@ input:valid, textarea:valid {
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 4em;
-    
+
     color: white
 }
 
@@ -212,9 +205,9 @@ input:valid, textarea:valid {
 
     width: 16px;
     height: 16px;
-    
+
     margin-right: 1rem;
-    
+
     border: 2px solid rgba(27, 105, 38);
     border-radius: 50%;
 
@@ -223,7 +216,7 @@ input:valid, textarea:valid {
 
 .radio-check {
     display: inline-block;
-    
+
     width: calc(100% - 4px);
     height: calc(100% - 4px);
     border-radius: 50%;
@@ -279,5 +272,58 @@ input:valid, textarea:valid {
 }
 
 .about>div>p+p {
-    margin-top: 1em;;
+    margin-top: 1em;
 }
+
+
+
+/* *** M O B I L E *** */
+/* *** M O B I L E *** */
+/* *** M O B I L E *** */
+/* *** M O B I L E *** */
+
+@media screen and (max-width: 1000px) {
+    body {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .home-page .container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        
+        padding-left: 0;
+    }
+    
+    .card {     
+        width: 35vw;
+        height: 32vh;
+        min-width: 285px;
+        min-height: 350px;
+        
+        border-radius: .5em;
+        
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home-page {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .home-page .container {
+        gap: 2em;
+    }
+        
+    .card {
+        width: 75vw;
+        height: 45vh;
+        min-width: 285px;
+        min-height: 350px;
+    }
+}
+
