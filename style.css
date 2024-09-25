@@ -115,9 +115,34 @@ input:valid, textarea:valid {
 /* COMMON ELEMENTS */
 .container {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     margin: 2em 0;
     padding-left: 10vw;
+}
+
+.btn {
+    align-self: start;
+    
+   
+    padding: .8em 4em;
+    
+    color: whitesmoke;
+    background-color: rgba(27, 105, 38, 0.8);
+    
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    
+    border: none;
+    border-radius: 5em;
+    cursor: pointer;
+}
+
+.btn:hover {
+
+    font-weight: 700;
+    color: white;
+    background-color: rgb(19, 77, 27);
 }
 
 
@@ -168,10 +193,10 @@ input:valid, textarea:valid {
     justify-content: space-around;
     /* align-content: space-between; */
     width: 33vw;
-    height: 375px;
+    /* height: 375px; */
     /* min-width: 455px; */
-    min-height: 390px;
-    max-width: 650px;
+    /* min-height: 390px; */
+    /* max-width: 650px; */
     /* margin-left: 10vw; */
     padding: 2em;
     font-size: .8rem;
@@ -233,32 +258,7 @@ input:valid, textarea:valid {
     opacity: 1;
 }
 
-.btn {
-    align-self: center;
 
-    width: 45%;
-    margin-top: 1em;
-    padding: 1em;
-
-    text-transform: uppercase;
-    letter-spacing: .2em;
-
-    text-align: center;
-    color: whitesmoke;
-    background-color: rgba(27, 105, 38, 0.8);
-
-    border: none;
-    border-radius: 5em;
-
-    cursor: pointer;
-}
-
-.btn:hover {
-
-    font-weight: 700;
-    color: white;
-    background-color: rgb(19, 77, 27);
-}
 
 /* ABOUT ME */
 /* ABOUT ME */
@@ -272,6 +272,9 @@ input:valid, textarea:valid {
     margin-top: 1em;
 }
 
+.about-page .container {
+    flex-direction: column;
+}
 
 
 /* *** M O B I L E *** */
