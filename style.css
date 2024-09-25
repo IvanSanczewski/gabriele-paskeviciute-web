@@ -279,6 +279,7 @@ input:valid, textarea:valid {
 /* *** M O B I L E *** */
 /* *** M O B I L E *** */
 
+
 @media screen and (max-width: 1000px) {
     body {
         height: 100vh;
@@ -286,7 +287,7 @@ input:valid, textarea:valid {
         overflow-y: auto;
     }
     
-/* *** HOME *** */
+    /* *** HOME *** */
 
     .home-page .container {
         display: flex;
@@ -307,7 +308,7 @@ input:valid, textarea:valid {
         margin-right: 0;
     }
 
-/* *** CONTACT *** */
+    /* *** CONTACT *** */
     .contact-page {
         background-position: center;
     }
@@ -318,6 +319,11 @@ input:valid, textarea:valid {
         min-width: 285px;
     }
 
+    /* *** ABOUT *** */
+    .about-page {
+        background-position: center;
+    }
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -340,15 +346,20 @@ input:valid, textarea:valid {
     .contact-page {
         height: 100vh;
     }
-
+    
     .contact-page .container {
         padding: 0;
         justify-content: center;
     }
-
+    
     .form {
         width: 75%;
     }
-
+    
+    /* *** ABOUT *** */
+    .about-page {
+        height: 100vh;
+    }
+    
 }
 
