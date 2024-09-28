@@ -9,8 +9,8 @@
 }
 
 body {
-    /* width: 100vw;
-    height: 100vh; */
+    width: 100vw;
+    height: 100vh; 
     /* overflow: hidden; */
 }
 
@@ -52,29 +52,21 @@ input:valid, textarea:valid {
 */
 
 
-/* PAGE BACKGROUND IMAGES  */
-/* PAGE BACKGROUND IMAGES  */
-.home-page {
-    /* background-image: url("/assets/kokedama.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-    background-color: rgb(206, 232, 210);
+/* COMMON ELEMENTS - STRUCTURAL */
+/* COMMON ELEMENTS - STRUCTURAL */
+.container {
+    display: flex;
 }
 
-.contact-page {
-    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
+.cards-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
 }
 
-.about-page {
-    background-image: url("/assets/Gabriele-portrait-2.JPG");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-}
+
+
 
 
 /* MENU */
@@ -112,14 +104,6 @@ input:valid, textarea:valid {
 }
 
 
-/* COMMON ELEMENTS - STRUCTURAL */
-/* COMMON ELEMENTS - STRUCTURAL */
-.container {
-    display: flex;
-    justify-content: center;
-    margin: 2em 0;
-    padding-left: 10vw;
-}
 
 /* COMMON ELEMENTS - DETAILS */
 /* COMMON ELEMENTS - DETAILS */
@@ -149,21 +133,44 @@ input:valid, textarea:valid {
 }
 
 
+
+
+
+/* PAGE BACKGROUND IMAGES  */
+/* PAGE BACKGROUND IMAGES  */
+.home-page {
+    /* background-image: url("/assets/kokedama.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background-color: rgb(34, 39, 47);
+}
+
+.contact-page {
+    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.about-page {
+    background-image: url("/assets/Gabriele-portrait-2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+
+
+
+
 /* HOME */
 /* HOME */
 .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    width: 15vw;
-    height: 32vh;
-    min-width: 285px;
-    min-height: 350px;
-
     border-radius: .5em;
-
-    margin-right: 2.5em;
 }
 
 .card-workshop-img {
