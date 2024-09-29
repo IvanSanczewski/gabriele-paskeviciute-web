@@ -72,39 +72,52 @@ input:valid, textarea:valid {
 .card {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    
+    width: 90vw;
+    height: 25vh;
+    
     border-radius: .5em;
+    overflow: hidden;
+}
+
+.card-header {
+    text-align: center;
+
+    width: 100%;
+
+    padding: 1em 0 .33em 0;
+    color: rgb(40, 40, 40);
+    
+    /* background-color: rgba(255, 255, 255, 0.549); */
+
+    background: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0) 0%, /* El 20% indica la distancia desde el margen superior donde empieza el degradado */
+        rgba(255, 255, 255, 0.849) 35%
+        
+    );
+    text-transform: uppercase;
 }
 
 .card-workshop-img {
     background-image: url("/assets/ISP_KOKEDAMA_WSP_76.jpg");
     background-size: cover;
-    background-position: center;
-
+    background-position-x: center;
+    background-position-y: top;
 }
+
 .card-kokedama-img {
-    background-color:rgb(64, 5, 104)
-}
-
-/* .card-kokedama-img {
     background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
     background-size: cover;
-    background-position: center;
-} */
+    background-position: bottom;
+}
 
 .card-cufflings-img {
     background-image: url("/assets/cuflinks.jpg");
     background-size: cover;
     background-position: center;
 }
-
-.card-header {
-    text-transform: uppercase;
-    /* text-align: center; */
-    margin-bottom: 4em;
-
-    color: white
-}
-
 
 
 /* MENU */
