@@ -56,16 +56,54 @@ input:valid, textarea:valid {
 /* COMMON ELEMENTS - STRUCTURAL */
 .container {
     display: flex;
+    justify-content: center;
 }
 
+
+/* HOME */
+/* HOME */
 .cards-menu {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 3em;
+    gap: 2em;
+    
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: .5em;
+}
 
+.card-workshop-img {
+    background-image: url("/assets/ISP_KOKEDAMA_WSP_76.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+.card-kokedama-img {
+    background-color:rgb(64, 5, 104)
+}
+
+/* .card-kokedama-img {
+    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
+    background-size: cover;
+    background-position: center;
+} */
+
+.card-cufflings-img {
+    background-image: url("/assets/cuflinks.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.card-header {
+    text-transform: uppercase;
+    /* text-align: center; */
+    margin-bottom: 4em;
+
+    color: white
+}
 
 
 
@@ -164,42 +202,7 @@ input:valid, textarea:valid {
 
 
 
-/* HOME */
-/* HOME */
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border-radius: .5em;
-}
 
-.card-workshop-img {
-    background-image: url("/assets/ISP_KOKEDAMA_WSP_76.jpg");
-    background-size: cover;
-    background-position: center;
-
-}
-
-.card-kokedama-img {
-    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
-    background-size: cover;
-    background-position: center;
-
-}
-
-.card-cufflings-img {
-    background-image: url("/assets/cuflinks.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.card-header {
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 4em;
-
-    color: white
-}
 
 
 /* CONTACT */
