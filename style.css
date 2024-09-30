@@ -64,6 +64,55 @@ input:valid, textarea:valid {
     justify-content: center;
 }
 
+
+/* MENU */
+/* MENU */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-section {
+    margin: 1rem;
+    color: white;
+    font-size: 1.08em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.menu-switchers {
+    display: flex;
+    gap: 1em;
+}
+
+
+.nav-menu {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+
+    padding: 1em 5em;
+    /*background-color: rgba(255, 255, 255, 0.219);*/
+
+    /* max-width: 100vw;  Prevents the nav from exceeding viewport width */
+    /* overflow-x: hidden;  Specifically hide any overflow from the menu */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    margin-right: 2em;
+    align-self: flex-start;
+}
+
 /* PAGE BACKGROUND IMAGES  */
 /* PAGE BACKGROUND IMAGES  */
 .home-page {
@@ -149,42 +198,7 @@ input:valid, textarea:valid {
 }
 
 
-/* MENU */
-/* MENU */
-.nav-menu {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-between;
 
-    padding: 1em 5em;
-    /*background-color: rgba(255, 255, 255, 0.219);*/
-
-    /* max-width: 100vw;  Prevents the nav from exceeding viewport width */
-    /* overflow-x: hidden;  Specifically hide any overflow from the menu */
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.menu-item {
-    margin: 1em;
-
-    color: white;
-    font-size: 1.08em;
-    letter-spacing: .15em;
-    /* text-transform: uppercase; */
-
-}
-
-.logo {
-    width: 65px;
-    height: 65px;
-
-    margin-right: 2em;
-    align-self: flex-start;
-}
 
 
 
