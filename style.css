@@ -10,7 +10,7 @@
 
 body {
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
     /* overflow: hidden; */
 }
 
@@ -59,6 +59,28 @@ input:valid, textarea:valid {
     justify-content: center;
 }
 
+/* PAGE BACKGROUND IMAGES  */
+/* PAGE BACKGROUND IMAGES  */
+.home-page {
+    background-image: url("/assets/kokedama.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-page {
+    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.about-page {
+    background-image: url("/assets/Gabriele-portrait-2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
 
 /* HOME */
 /* HOME */
@@ -86,17 +108,18 @@ input:valid, textarea:valid {
 
     width: 100%;
 
-    padding: 1em 0 .33em 0;
+    padding: .35em 0;
     color: rgb(40, 40, 40);
     
-    /* background-color: rgba(255, 255, 255, 0.549); */
-
-    background: linear-gradient(
+    background-color: rgba(255, 255, 255, 0.549);
+    
+    /* background: linear-gradient(
         to bottom, 
-        rgba(255, 255, 255, 0) 0%, /* El 20% indica la distancia desde el margen superior donde empieza el degradado */
+        rgba(255, 255, 255, 0) 0%, El 20% indica la distancia desde el margen superior donde empieza el degradado 
         rgba(255, 255, 255, 0.849) 35%
         
-    );
+        padding: 1em 0 .33em 0;
+    ); */
     text-transform: uppercase;
 }
 
@@ -187,29 +210,7 @@ input:valid, textarea:valid {
 
 
 
-/* PAGE BACKGROUND IMAGES  */
-/* PAGE BACKGROUND IMAGES  */
-.home-page {
-    /* background-image: url("/assets/kokedama.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-    background-color: rgb(34, 39, 47);
-}
 
-.contact-page {
-    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-}
-
-.about-page {
-    background-image: url("/assets/Gabriele-portrait-2.JPG");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-}
 
 
 
