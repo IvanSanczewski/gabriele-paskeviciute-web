@@ -102,7 +102,8 @@ input:valid, textarea:valid {
     justify-content: flex-end;
 
     width: 90vw;
-    height: 25vh;
+    height: 50vh;
+    /* min-height: 275px; */
 
     border-radius: .5em;
     overflow: hidden;
