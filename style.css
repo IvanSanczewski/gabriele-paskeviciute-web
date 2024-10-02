@@ -87,6 +87,14 @@ nav {
 }
 
 
+#lang-toggle {
+
+}
+
+#menu-toggle {
+
+}
+
 .nav-menu {
     display: flex;
     /* flex-direction: column; */
