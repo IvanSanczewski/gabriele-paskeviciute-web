@@ -67,11 +67,11 @@ input:valid, textarea:valid {
 
 /* MENU */
 /* MENU */
-
-nav {
+.nvg-menu {
     display: flex;
     justify-content: space-between;
 }
+
 
 .menu-section {
     margin: 1rem;
@@ -86,32 +86,43 @@ nav {
     gap: 1em;
 }
 
-
-#lang-toggle {
-
+.menu-toggle {
+    cursor: pointer;
 }
 
-#menu-toggle {
-
-}
-
-.nav-menu {
+nav {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
-
-    padding: 1em 5em;
-    /*background-color: rgba(255, 255, 255, 0.219);*/
-
-    /* max-width: 100vw;  Prevents the nav from exceeding viewport width */
-    /* overflow-x: hidden;  Specifically hide any overflow from the menu */
 }
 
-.menu {
+nav>ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+li {
+    text-align: center;
+}
+
+#off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(209, 209, 209, 0.9);
+    color: white;
     display: flex;
     align-items: center;
+    justify-content: center;
+    transform: translateX(100%); /* Off-screen initially */
+    transition: transform 0.8s ease-in-out;
+    z-index: 999; /* Ensure it's on top of everything */
 }
 
+#off-canvas-menu.active {
+    transform: translateX(0); /* Slide the menu in */}
 
 .logo {
     width: 65px;
