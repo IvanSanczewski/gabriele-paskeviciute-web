@@ -1,7 +1,7 @@
 "use strict";
 
-const menuSwitcher = document.getElementById('menu-toggle');
-const menuCloser = document.getElementById('close-menu');
+const menuSwitcher = document.querySelectorAll('menu-toggle');
+// const menuCloser = document.getElementsByClassName('close-menu');
 const offCanvasMenu = document.getElementById('off-canvas-menu');
 
 menuSwitcher.addEventListener('click', function (){
@@ -14,6 +14,6 @@ menuSwitcher.addEventListener('click', function (){
     }
 });
 
-menuCloser.addEventListener('click', function() {
-    offCanvasMenu.classList.toggle('active');
-})
+// menuCloser.addEventListener('click', function() {
+//     offCanvasMenu.classList.toggle('active');
+// })
