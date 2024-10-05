@@ -105,6 +105,10 @@ li {
     text-align: center;
 }
 
+#lang-toggle {
+    cursor: pointer;
+}
+
 #off-canvas-menu {
     position: fixed;
     top: 0;
