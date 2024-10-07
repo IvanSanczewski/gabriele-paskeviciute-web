@@ -86,9 +86,9 @@ input:valid, textarea:valid {
     gap: 1em;
 }
 
-.menu-toggle {
+/* .menu-toggle {
     cursor: pointer;
-}
+} */
 
 nav {
     display: flex;
@@ -105,7 +105,7 @@ li {
     text-align: center;
 }
 
-#lang-toggle {
+header span {
     cursor: pointer;
 }
 
