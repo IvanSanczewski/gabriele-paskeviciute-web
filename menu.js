@@ -7,7 +7,8 @@ const offCanvasMenu = document.getElementById('off-canvas-menu');
 
 
 menuSwitcher.addEventListener('click', function (){
-    offCanvasMenu.classList.toggle('active'); //adds/removes a class to the element
+    offCanvasMenu.classList.toggle('active'); //adds/removes the class passed as aparameter to the element
+    menuSwitcher.classList.remove('menu-toggle');
     
     if (menuSwitcher.innerHTML === 'M') {
         menuSwitcher.innerHTML = 'X';

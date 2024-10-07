@@ -115,7 +115,7 @@ li {
     right: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(209, 209, 209, 0.9);
+    background-color: rgba(209, 209, 209, 0.33);
     color: white;
     display: flex;
     align-items: center;
