@@ -1,36 +1,32 @@
 "use strict";
 
 //Off canvas menu toggling
-const menuSwitcher = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelectorAll('.menu-toggle');
 const offCanvasMenu = document.getElementById('off-canvas-menu');
-// const menuCloser = document.getElementsByClassName('close-menu');
 
+function toggleMenu() {
+    offCanvasMenu.classList.toggle('active'); // adds/remove .active from selected element
+}
 
-menuSwitcher.addEventListener('click', function (){
-    offCanvasMenu.classList.toggle('active'); //adds/removes the class passed as aparameter to the element
-    menuSwitcher.classList.remove('menu-toggle');
-    
-    if (menuSwitcher.innerHTML === 'M') {
-        menuSwitcher.innerHTML = 'X';
-    } else {
-        menuSwitcher.innerHTML = 'M';
-    }
+menuToggle.forEach(toggle => {
+    toggle.addEventListener('click', toggleMenu);
 });
 
 
 // Language menu toggling
-const langSwitcher = document.getElementById('lang-toggle');
+let currentLang = 'ENG'
+const mainLangSwitcher = document.getElementById('main-lang-toggle');
 const ocmLangSwitcher = document.getElementById('ocm-lang-toggle');
 
-langSwitcher.addEventListener('click', function () {
+function switchLang() {
+    currentLang = (currentLang === 'ENG') ? 'LT' : 'ENG';
 
-    if (langSwitcher.innerHTML === 'ENG') {
-        langSwitcher.innerHTML = 'LT';
-    } else {
-        langSwitcher.innerHTML = 'ENG';
-    }
-});
+    mainLangSwitcher.innerHTML = currentLang;
+    ocmLangSwitcher.innerHTML = currentLang;
+};
 
+mainLangSwitcher.addEventListener('click', switchLang);
+ocmLangSwitcher.addEventListener('click', switchLang);
 
 
 // menuCloser.addEventListener('click', function() {

@@ -67,7 +67,7 @@ input:valid, textarea:valid {
 
 /* MENU */
 /* MENU */
-.nvg-menu {
+.main-menu {
     display: flex;
     justify-content: space-between;
 }
