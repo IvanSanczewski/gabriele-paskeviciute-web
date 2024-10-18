@@ -116,9 +116,10 @@ input:valid, textarea:valid {
     background-color: rgb(31, 82, 31);
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translateX(100%); /* Off-screen initially */
+    transform: translateX(-100%); /* Off-screen initially */
     transition: transform 0.8s ease-in-out;
     z-index: 999; /* Ensure it's on top of everything */
 }
@@ -127,29 +128,32 @@ input:valid, textarea:valid {
     transform: translateX(0); /* Slide the menu in */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
+#off-canvas-menu>div {
+    position: fixed;
+    top: 0px;
+    right: 0px;
 }
-    
+
+
 nav>ul {
     display: flex;
     flex-direction: column;
     list-style: none;
-    /* position: relative; */
+    /* position: relative */
 }
 
 li {
+    margin: .35em 0;
+
     text-align: center;
+    text-transform: uppercase;
 
     color: white;
 }
 
-header span{
-    cursor: pointer;
-}
 
-nav>ul>li:first-child {
+/* nav>ul>li:first-child { */
+/* nav>ul>div>li {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -157,6 +161,10 @@ nav>ul>li:first-child {
     margin: 1rem 1.4rem 1rem 1rem;
 
     font-size: 1.08em;
+} */
+
+header span{
+    cursor: pointer;
 }
 
 
@@ -199,10 +207,10 @@ nav>ul>li:first-child {
     justify-content: flex-end;
 
     width: 90vw;
-    height: 50vh;
+    height: 65vh;
     /* min-height: 275px; */
 
-    border-radius: .5em;
+    border-radius: .25em;
     overflow: hidden;
 }
 
