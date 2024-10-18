@@ -41,7 +41,6 @@ input, textarea {
     border-top: none;
     border-right: none;
     border-bottom: 1px solid  rgba(27, 105, 38, 0.856);
-    /* border-bottom: 1px solid rgb(85, 85, 85); */
     border-left: none;
 
     cursor: pointer;
