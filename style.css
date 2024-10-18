@@ -23,8 +23,12 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    color: rgb(116, 221, 198); /* Color cuando el enlace ha sido visitado */
+}
+
 a:hover {
-    color: black;
+    color: rgb(28, 185, 62);
 }
 
 input, textarea {
@@ -109,7 +113,7 @@ input:valid, textarea:valid {
     right: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(16, 59, 16);
+    background-color: rgb(31, 82, 31);
     color: white;
     display: flex;
     align-items: center;
