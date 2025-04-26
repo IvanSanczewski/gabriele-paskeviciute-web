@@ -1,6 +1,6 @@
 :root {
-    --margin-slider: 5.75em;
-    --image-border: 1.15em;
+    --margin-slider: 2.75em;
+    --image-border: 0.5em;
 }
 
 * {
@@ -33,13 +33,13 @@
     height: calc(100% - var(--margin-slider));
 }
 
-#close {
+.close-container {
     display: flex;
     justify-content: end;
 
 }
-    
-#close p {
+
+#close {
     cursor: pointer;
 }
 
@@ -53,5 +53,6 @@ img{
 }
 
 .dimmed {
-    opacity: 0.4;
+    transition-duration: 1s;
+    opacity: 0.25;
 }
