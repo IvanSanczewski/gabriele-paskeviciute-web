@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200, 300, 400, 500, 700, 900 ;
+    font-style: normal;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+main {
+    padding-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(116, 221, 198); /* Color cuando el enlace ha sido visitado */
+}
+
+a:hover {
+    color: rgb(28, 185, 62);
+}
+
+input, textarea {
+    display: inline;
+    padding: .4em;
+
+    font-size: .65rem;
+
+    background-color: rgba(255, 255, 255, 0);
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid  rgba(27, 105, 38, 0.856);
+    border-left: none;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.question input:focus, textarea:focus {
+    border-bottom: 2px solid rgba(27, 105, 38);
+}
+
+input:valid, textarea:valid {
+    font-weight: 500;
+    letter-spacing: .1em;
+    border-bottom: 2px solid rgba(27, 105, 38);
+}
+
+/*.roboto-condensed-<uniquifier> {
+    // <uniquifier>: Use a unique and descriptive class name
+    // <weight>: Use a value from 100 to 900
+}
+*/
+
+
+/* COMMON ELEMENTS - STRUCTURAL */
+/* COMMON ELEMENTS - STRUCTURAL */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* MENU */
+/* MENU */
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.menu-section {
+    margin: 1rem 2rem 1rem 1rem;
+    color: white;
+    font-size: 1.08em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.menu-switchers {
+    display: flex;
+    gap: 1em;
+}
+
+
+
+
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    margin-right: 2em;
+    align-self: flex-start;
+}
+
+
+#off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(31, 82, 31);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%); /* Off-screen initially */
+    transition: transform 0.8s ease-in-out;
+    z-index: 999; /* Ensure it's on top of everything */
+}
+
+#off-canvas-menu.active {
+    transform: translateX(0); /* Slide the menu in */
+}
+
+#off-canvas-menu>div {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+
+nav>ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    /* position: relative */
+}
+
+li {
+    margin: .35em 0;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: white;
+}
+
+
+/* nav>ul>li:first-child { */
+/* nav>ul>div>li {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    
+    margin: 1rem 1.4rem 1rem 1rem;
+
+    font-size: 1.08em;
+} */
+
+header span{
+    cursor: pointer;
+}
+
+
+
+/* PAGE BACKGROUND IMAGES  */
+/* PAGE BACKGROUND IMAGES  */
+.home-page {
+    background-image: url("/assets/kokedama.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-page {
+    background-image: url("/assets/ISP_KOKEDAMA_test.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.about-page {
+    background-image: url("/assets/Gabriele-portrait-2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+/* HOME */
+/* HOME */
+.cards-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 90vw;
+    height: 65vh;
+    /* min-height: 275px; */
+
+    border-radius: .25em;
+    overflow: hidden;
+}
+
+.card-header {
+    text-align: center;
+
+    width: 100%;
+
+    padding: .35em 0;
+    color: rgb(40, 40, 40);
+
+    background-color: rgba(255, 255, 255, 0.549);
+
+    /* background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%, El 20% indica la distancia desde el margen superior donde empieza el degradado
+        rgba(255, 255, 255, 0.849) 35%
+
+        padding: 1em 0 .33em 0;
+    ); */
+    text-transform: uppercase;
+}
+
+.card-workshop-img {
+    background-image: url("/assets/ISP_KOKEDAMA_WSP_76.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+.card-kokedama-img {
+    background-image: url("/assets/KOKEDAMA_GRAIN_1500.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.card-cufflings-img {
+    background-image: url("/assets/cuflinks.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+/* COMMON ELEMENTS - DETAILS */
+/* COMMON ELEMENTS - DETAILS */
+.btn {
+    align-self: start;
+
+
+    padding: .8em 4em;
+
+    color: whitesmoke;
+    background-color: rgba(27, 105, 38, 0.8);
+
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+
+    border: none;
+    border-radius: 5em;
+    cursor: pointer;
+}
+
+.btn:hover {
+
+    font-weight: 700;
+    color: white;
+    background-color: rgb(19, 77, 27);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTACT */
+/* CONTACT */
+.form, .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-content: space-between; */
+    width: 33vw;
+    /* height: 375px; */
+    /* min-width: 455px; */
+    /* min-height: 390px; */
+    /* max-width: 650px; */
+    /* margin-left: 10vw; */
+    padding: 2em;
+    font-size: .8rem;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 0.5em;
+}
+
+.question {
+    line-height: 1.5em;
+}
+
+.question>div {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 1.5em;
+}
+
+.choice-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.radio-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 16px;
+    height: 16px;
+
+    margin-right: 1rem;
+
+    border: 2px solid rgba(27, 105, 38);
+    border-radius: 50%;
+
+    opacity: 1;
+}
+
+.radio-check {
+    display: inline-block;
+
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50%;
+    background-color: rgba(27, 105, 38);
+
+    opacity: 0;
+    transition: opacity .5s ease;
+
+    cursor: pointer;
+}
+
+.radio-btn input {
+    display: none;
+}
+
+.radio-btn input:checked + .radio-check {
+    opacity: 1;
+}
+
+
+
+/* ABOUT ME */
+/* ABOUT ME */
+.about {
+    color: whitesmoke;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.about>div>p+p {
+    margin-top: 1em;
+}
+
+.about-page .container {
+    flex-direction: column;
+}
