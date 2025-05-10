@@ -2,6 +2,10 @@
     --margin-slider: 5.75em;
     --image-border: 0.5em;
     --opacity-image: 0.15;
+
+    --color-main: rgb(181, 214, 173);
+    --color-selected:  rgb(27, 67, 17);
+    --color-background: rgb(3, 14, 9);
 }
 
 * {
@@ -12,6 +16,29 @@
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+}
+
+.content div {
+    line-height: 2;
+}
+
+h1 {
+    font-size: 2.45em;
+    font-weight: 700;
+    letter-spacing: 0.55em;
+
+    line-height: normal;
+
+}
+
+
+h3, h4 {
+    font-weight: 400;
+}
+
+
+p {
+    font-weight: 200;
 }
 
 .landing-page {
@@ -25,8 +52,8 @@
     width: 100vw;
     height: 100vh;
     
-    color: rgb(181, 214, 173);
-    background-color: rgb(3, 14, 9);
+    color: var(--color-main);
+    background-color: var(--color-background);
 }
 
 .menu-item {
@@ -45,7 +72,6 @@
 .menu-bottom {
     margin-top: .35em;
 }
-
 
 .content {
     display: grid;
@@ -91,18 +117,64 @@
 }
 
 .title-top {
-    padding-right: 2em;
+    padding-right: 5em;
 }
 
 .title-bottom {
-    padding-left: 2em;
+    padding-left: 5em;
 }
 
 
 .form {
     grid-area: form;
-    padding: 2em 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
 }
+
+.form-row {
+    display: flex;
+    gap: 2em;
+}
+
+.form-input {
+    display: flex;
+    gap: 2em;
+}
+
+textarea {
+    height: 1.8em;
+
+    font-size: 1em;
+
+    color: var(--color-selected);
+    background-color: var(--color-main);
+
+    border-radius: 0.25em;
+    border: none;   
+    border-bottom: solid 1px var(--color-main); 
+    
+    resize: none;
+}
+
+button {
+    width: 185px;
+
+    font-weight: 700;
+    /* letter-spacing: 1.9; */
+    color: var(--color-main);
+    background-color: var(--color-selected);
+    
+    margin: 0.5em auto;
+    padding: 0.5em;
+    border-radius: 0.35em;
+    border: none;
+}
+
+button:focus, textarea:focus, input:focus, a:-webkit-any-link  {
+    outline: none;
+} 
 
 .image-slider {
     position: relative;
