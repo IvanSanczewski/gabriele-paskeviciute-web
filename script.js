@@ -19,7 +19,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('CONTACT 1');
                         image.classList.add('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         contact.classList.toggle('hidden');
+                        contact.classList.toggle('visible');
                         break;
                     }
 
@@ -29,7 +31,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('FORM 2');
                         image.classList.remove('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         contact.classList.toggle('hidden');
+                        contact.classList.toggle('visible');
                         break;
                     }
 
@@ -38,6 +42,7 @@ imageDimmerList.forEach( imageDimmer => {
                         (!form.classList.contains('hidden')))) {
                         console.log('FORM 3');
                         contact.classList.toggle('hidden');
+                        contact.classList.toggle('visible');
                     }
                     break;
 
@@ -46,7 +51,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('WORKSHOPS 1');
                         image.classList.add('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         workshops.classList.toggle('hidden');
+                        workshops.classList.toggle('visible');
                         break;
                     }
 
@@ -56,7 +63,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('WORKSHOPS 2');
                         image.classList.remove('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         workshops.classList.toggle('hidden');
+                        workshops.classList.toggle('visible');
                         break;
                     }
 
@@ -65,6 +74,7 @@ imageDimmerList.forEach( imageDimmer => {
                         (!form.classList.contains('hidden')))) {
                         console.log('WORKSHOPS 3');
                         workshops.classList.toggle('hidden');
+                        workshops.classList.toggle('visible');
                     }
                     break;
 
@@ -73,7 +83,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('FORM 1');
                         image.classList.add('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         form.classList.toggle('hidden');
+                        form.classList.toggle('visible');
                         break;
                     }
 
@@ -83,7 +95,9 @@ imageDimmerList.forEach( imageDimmer => {
                         console.log('FORM 2');
                         image.classList.remove('dimmed');
                         title.classList.toggle('hidden');
+                        title.classList.toggle('visible');
                         form.classList.toggle('hidden');
+                        form.classList.toggle('visible');
                         break;
                     }
 
@@ -92,6 +106,7 @@ imageDimmerList.forEach( imageDimmer => {
                         (!workshops.classList.contains('hidden')))) {
                         console.log('FORM 3');
                         form.classList.toggle('hidden');
+                        form.classList.toggle('visible');
                     }
             }
         })
