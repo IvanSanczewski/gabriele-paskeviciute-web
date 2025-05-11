@@ -135,17 +135,17 @@ p {
 
 .form-row {
     display: flex;
-    gap: 4.5em;
+    gap: clamp(1.5em, 4vw, 2.5em);
+    /* justify-content: space-around; */
 }
 
 .form-input {
     display: flex;
-    gap: 0.5em;
-    align-self: flex-end;
 }
 
 textarea {
     height: 1.2em;
+    width: 35ch;
 
     padding: 0.15em 0 0.15em 0.33em;
 
@@ -163,6 +163,8 @@ textarea {
 }
 
 button {
+    align-self: flex-start;
+
     width: 185px;
 
     font-size: 1em;
@@ -171,7 +173,7 @@ button {
     color: var(--color-main);
     background-color: var(--color-selected);
 
-    margin: 0.5em auto;
+    /* margin: 1.5em auto; */
     padding: 0.5em;
     border-radius: 0.35em;
     border: none;
@@ -197,6 +199,29 @@ img{
 
     object-fit: cover;
     border-radius: var(--image-border);
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+
+    padding: 0.5em;
+    
+    font-size: 2em;
+    border: none;
+    
+    transform: translateY(-50%);
+    
+    cursor: pointer;
+}
+
+.left {
+    left: -1.085em;
+}
+
+.right {
+    right: -1.085em;
 }
 
 .dimmed {

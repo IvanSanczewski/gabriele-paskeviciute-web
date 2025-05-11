@@ -111,3 +111,25 @@ imageDimmerList.forEach( imageDimmer => {
             }
         })
 })
+
+
+
+// S L I D E R S
+
+const slides = [
+    '/assets/ISP_KOKEDAMA_test.jpg',
+    '/assets/Gabriele-portrait-2.JPG',
+    '/assets/Gabriele-portrait-1.JPG'
+];
+
+let currentSlide = 0;
+let autoSlideInterval;
+
+slides.forEach((src, index) =>{
+    img.src = src;
+    img.alt = `Kokedama ${index + 1}`;
+    img.classList.add('slide');
+
+    if (index === 0) img.classList.add('active');
+    slidesContainer.appendChild(img);
+})
