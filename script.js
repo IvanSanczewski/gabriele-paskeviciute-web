@@ -1,5 +1,4 @@
 const image = document.querySelector('.slides-container');
-console.log(image);
 const title = document.querySelector('.title');
 
 const contact = document.querySelector('.contact');
@@ -109,10 +108,12 @@ imageDimmerList.forEach( imageDimmer => {
 // S L I D E R S
 
 const slides = [
+    '/assets/ISP_KOKEDAMA_3.png',
     '/assets/ISP_KOKEDAMA_test.jpg',
     '/assets/ISP_KOKEDAMA_WSP_389.jpg',
     '/assets/ISP_KOKEDAMA_WSP_394.jpg',
-    '/assets/ISP_KOKEDAMA_WSP_405.jpg'
+    '/assets/ISP_KOKEDAMA_WSP_405.jpg',
+
 ];
 
 let currentSlide = 0;
@@ -176,8 +177,20 @@ const startInterval = () => {
 const resetInterval = () => {
     clearInterval(autoSlideInterval);
     startInterval();
-};;
-
+};
 
 startInterval();
 
+document.addEventListener('keydown', (e)=> {
+    if (e.key === 'Escape') {
+        image.classList.remove('dimmed');
+        title.classList.remove('visible');
+        title.classList.add('hidden');
+        contact.classList.remove('visible');
+        contact.classList.add('hidden');
+        workshops.classList.remove('visible');
+        workshops.classList.add('hidden');
+        form.classList.remove('visible');
+        form.classList.add('hidden');
+    } 
+})
