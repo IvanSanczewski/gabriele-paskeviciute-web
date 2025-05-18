@@ -5,51 +5,47 @@ const contact = document.querySelector('.contact');
 const workshops = document.querySelector('.workshops')
 const form = document.querySelector('.form')
 
-const imageDimmerList = document.querySelectorAll('.dimmer');
+const menuItemList = document.querySelectorAll('.menu-item');
 
-imageDimmerList.forEach( imageDimmer => {
-    imageDimmer.addEventListener('click', () => {
-            const menuItem = imageDimmer.textContent;
-            console.log(menuItem);
+menuItemList.forEach( item => {
+    item.addEventListener('click', () => {
+            const menuItem = item.textContent;
+            console.log(menuItem); 
 
 
             switch (menuItem) {
                 case ('contact'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        contact.classList.toggle('hidden');
-                        contact.classList.toggle('visible');
+                        console.log('ON CONTACT');
+                        toggleTitle();
+                        toggleContact();
                         break;
                     }
-
+                    
                     if ((image.classList.contains('dimmed')) && (
                         (workshops.classList.contains('hidden')) &&
                         (form.classList.contains('hidden')))) {
+                        console.log('OFF CONTACT');
                         image.classList.remove('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        contact.classList.toggle('hidden');
-                        contact.classList.toggle('visible');
+                        toggleTitle();  
+                        toggleContact();
                         break;
                     }
-
+                    
                     if ((image.classList.contains('dimmed')) && (
                         (!workshops.classList.contains('hidden')) ||
                         (!form.classList.contains('hidden')))) {
-                        contact.classList.toggle('hidden');
-                        contact.classList.toggle('visible');
-                    }
-                    break;
-
+                        console.log('OTHER(S) REMAINS');
+                        toggleContact();
+                        }
+                        break;
+                        
                 case ('workshops'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        workshops.classList.toggle('hidden');
-                        workshops.classList.toggle('visible');
+                        toggleTitle();  
+                        toggleWorkshops();
                         break;
                     }
 
@@ -57,51 +53,116 @@ imageDimmerList.forEach( imageDimmer => {
                         (contact.classList.contains('hidden')) &&
                         (form.classList.contains('hidden')))) {
                         image.classList.remove('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        workshops.classList.toggle('hidden');
-                        workshops.classList.toggle('visible');
+                        toggleTitle();
+                        toggleWorkshops();
                         break;
                     }
 
                     if ((image.classList.contains('dimmed')) && (
                         (!contact.classList.contains('hidden')) ||
                         (!form.classList.contains('hidden')))) {
-                        workshops.classList.toggle('hidden');
-                        workshops.classList.toggle('visible');
+                        toggleWorkshops();
                     }
                     break;
 
                 case ('organise a workshop'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        form.classList.toggle('hidden');
-                        form.classList.toggle('visible');
+                        toggleTitle();
+                        toggleForm();
                         break;
                     }
-
+                    
                     if ((image.classList.contains('dimmed')) && (
                         (contact.classList.contains('hidden')) &&
                         (workshops.classList.contains('hidden')))) {
                         image.classList.remove('dimmed');
-                        title.classList.toggle('hidden');
-                        title.classList.toggle('visible');
-                        form.classList.toggle('hidden');
-                        form.classList.toggle('visible');
+                        toggleTitle();
+                        toggleForm();
                         break;
                     }
-
+                        
                     if ((image.classList.contains('dimmed')) && (
                         (!contact.classList.contains('hidden')) ||
                         (!workshops.classList.contains('hidden')))) {
-                        form.classList.toggle('hidden');
-                        form.classList.toggle('visible');
+                        toggleForm();
                     }
             }
         })
 })
+
+
+document.querySelector('.close-contact').addEventListener('click', ()=>{
+    if ((workshops.classList.contains('hidden')) &&
+        (form.classList.contains('hidden'))){
+        image.classList.remove('dimmed');               
+        toggleTitle();
+        toggleContact();
+    } 
+
+    if ((!workshops.classList.contains('hidden')) ||
+        (!form.classList.contains('hidden'))){
+        toggleContact();
+    }
+});
+
+
+document.querySelector('.close-workshops').addEventListener('click', ()=>{
+    if ((contact.classList.contains('hidden')) &&
+        (form.classList.contains('hidden'))){
+        image.classList.remove('dimmed');               
+        toggleTitle();
+        toggleWorkshops();
+    }
+    
+    if ((!contact.classList.contains('hidden')) ||
+        (!form.classList.contains('hidden'))){
+        toggleWorkshops();
+    } 
+});
+
+
+document.querySelector('.close-form').addEventListener('click', ()=>{
+    if ((contact.classList.contains('hidden')) &&
+        (workshops.classList.contains('hidden'))){
+        image.classList.remove('dimmed');               
+        toggleTitle();
+        toggleForm();
+    } 
+
+    if ((!contact.classList.contains('hidden')) ||
+        (!form.classList.contains('hidden'))){
+        toggleForm();
+    }
+});
+
+
+
+function toggleTitle (){
+    title.classList.toggle('hidden');
+    title.classList.toggle('visible');    
+}
+
+function toggleContact (){
+    contact.classList.toggle('hidden');
+    contact.classList.toggle('visible');    
+}
+
+function toggleWorkshops (){
+    workshops.classList.toggle('hidden');
+    workshops.classList.toggle('visible');    
+}
+
+function toggleForm (){
+    form.classList.toggle('hidden');
+    form.classList.toggle('visible');    
+}
+
+
+
+
+
+
 
 
 
@@ -112,8 +173,7 @@ const slides = [
     '/assets/ISP_KOKEDAMA_test.jpg',
     '/assets/ISP_KOKEDAMA_WSP_389.jpg',
     '/assets/ISP_KOKEDAMA_WSP_394.jpg',
-    '/assets/ISP_KOKEDAMA_WSP_405.jpg',
-
+    '/assets/ISP_KOKEDAMA_WSP_405.jpg'
 ];
 
 let currentSlide = 0;
@@ -171,7 +231,7 @@ document.addEventListener('keydown', (e) =>{
 
 // Automatic slides
 const startInterval = () => {
-    autoSlideInterval = setInterval(nextSlide, 5000);
+    autoSlideInterval = setInterval(nextSlide, 7500);
 };
 
 const resetInterval = () => {

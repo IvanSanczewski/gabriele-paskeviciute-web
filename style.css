@@ -45,17 +45,29 @@ p {
     cursor: pointer;
 }
 
-.menu-top, .menu-bottom {
-    display: flex;
-    gap: 50vw;
+.menu-item:focus, .menu-item:hover {
+    font-weight: 600;
 }
 
 .menu-top {
+    display: flex;
+    justify-content: space-around;
+
     margin-bottom: .35em;
+
+    width: 100%;
 }
 
 .menu-bottom {
+    display: flex;
+    
+    position: relative;
+
     margin-top: .35em;
+}
+
+.close {
+    cursor: pointer;
 }
 
 .landing-page {
@@ -68,7 +80,7 @@ p {
 
     width: 100vw;
     height: 100vh;
-    
+
     color: var(--color-main);
     background-color: var(--color-background);
 }
@@ -77,7 +89,7 @@ p {
     position: relative;
 
     width: calc(100% - var(--margin-slider));
-    height: calc(100% - var(--margin-slider));     
+    height: calc(100% - var(--margin-slider));
 }
 
 .slides-container {
@@ -131,16 +143,40 @@ img {
     z-index: 2;
 }
 
+.contact-container, .workshops-container, .form-container {
+    position: relative;
+}
+
 .contact {
     grid-area: contact;
+    display: flex;
+    justify-content: center;
 
-    padding: 2em 0 0 20%;
+    padding-top: 2em;
+}
+
+
+.contact span, .workshops span {
+    position: absolute;
+
+    top: -1em;
+    right: -3em;
+}
+
+
+.form span {
+    position: absolute;
+
+    top: 2em;
+    left: 41em;
 }
 
 .workshops {
     grid-area: workshops;
-
-    padding: 2em 0 0 50%;
+    display: flex;
+    justify-content: center;
+    
+    padding-top: 2em;
 }
 
 .title {
@@ -160,7 +196,7 @@ img {
     padding-left: 5em;
 }
 
-.form {
+.form-container {
     grid-area: form;
     display: flex;
     flex-direction: column;
@@ -198,7 +234,7 @@ textarea {
 
 button {
     align-self: flex-start;
-    
+
     margin-top: 1em;
     padding: 0.5em;
 
@@ -213,12 +249,21 @@ button {
 
     border-radius: 0.35em;
     border: none;
+    border: solid 2px var(--color-selected);
 
     cursor: pointer;
 }
 
+
 button:focus, textarea:focus, input:focus, a:-webkit-any-link  {
     outline: none;
+}
+
+button:hover, button:focus {
+    color: var(--color-selected);
+    background-color: var(--color-main);
+    
+    /* border: solid 2px var(--color-main); */
 }
 
 .arrow-btn {
@@ -227,12 +272,12 @@ button:focus, textarea:focus, input:focus, a:-webkit-any-link  {
     z-index: 3;
 
     padding: 0.5em;
-    
+
     font-size: 2em;
     border: none;
-    
+
     transform: translateY(-50%);
-    
+
     cursor: pointer;
 }
 
