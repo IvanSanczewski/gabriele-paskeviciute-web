@@ -126,12 +126,12 @@ img {
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr 3fr;
     grid-template-areas:
-    "contact workshops"
-    "title title"
-    "form .";
+    "contact contact workshops"
+    "title title title"
+    "form . .";
 
     width: 100%;
     height: 100%;
@@ -150,9 +150,9 @@ img {
 .contact {
     grid-area: contact;
     display: flex;
-    justify-content: center;
+    justify-content: start;
 
-    padding-top: 2em;
+    padding: 2em 0 0 2em;
 }
 
 
@@ -167,7 +167,7 @@ img {
 .form span {
     position: absolute;
 
-    top: 2em;
+    top: 1em;
     left: 41em;
 }
 
@@ -196,12 +196,19 @@ img {
     padding-left: 5em;
 }
 
+.form { 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
 .form-container {
     grid-area: form;
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding: 2em;
+    padding: 0 0 2em 2em;
+    /* padding-left: 2em; */
 }
 
 .form-row {
