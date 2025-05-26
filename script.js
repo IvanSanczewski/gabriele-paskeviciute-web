@@ -2,6 +2,7 @@ const image = document.querySelector('.slides-container');
 const title = document.querySelector('.title');
 
 const contact = document.querySelector('.contact');
+const about = document.querySelector('.about');
 const workshops = document.querySelector('.workshops')
 const form = document.querySelector('.form')
 
@@ -39,31 +40,33 @@ menuItemList.forEach( item => {
                         console.log('OTHER(S) REMAINS');
                         toggleContact();
                         }
-                        break;
+                    break;
                         
-                case ('workshops'):
+                case ('about kokedama'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
                         toggleTitle();  
-                        toggleWorkshops();
+                        toggleAbout();
                         break;
                     }
 
                     if ((image.classList.contains('dimmed')) && (
                         (contact.classList.contains('hidden')) &&
-                        (form.classList.contains('hidden')))) {
+                        (form.classList.contains('hidden')) &&
+                        (workshops.classList.contains('hidden')))) {
                         image.classList.remove('dimmed');
                         toggleTitle();
-                        toggleWorkshops();
+                        toggleAbout();
                         break;
                     }
 
                     if ((image.classList.contains('dimmed')) && (
                         (!contact.classList.contains('hidden')) ||
-                        (!form.classList.contains('hidden')))) {
-                        toggleWorkshops();
+                        (!form.classList.contains('hidden')) ||
+                        (!workshops.classList.contains('hidden')))) {
+                        toggleAbout();
                     }
-                    break;
+                break;
 
                 case ('organise a workshop'):
                     if (!image.classList.contains('dimmed')) {
@@ -87,6 +90,30 @@ menuItemList.forEach( item => {
                         (!workshops.classList.contains('hidden')))) {
                         toggleForm();
                     }
+                break;
+
+                case ('workshops'):
+                    if (!image.classList.contains('dimmed')) {
+                        image.classList.add('dimmed');
+                        toggleTitle();  
+                        toggleWorkshops();
+                        break;
+                    }
+
+                    if ((image.classList.contains('dimmed')) && (
+                        (contact.classList.contains('hidden')) &&
+                        (form.classList.contains('hidden')))) {
+                        image.classList.remove('dimmed');
+                        toggleTitle();
+                        toggleWorkshops();
+                        break;
+                    }
+
+                    if ((image.classList.contains('dimmed')) && (
+                        (!contact.classList.contains('hidden')) ||
+                        (!form.classList.contains('hidden')))) {
+                        toggleWorkshops();
+                    }
             }
         })
 })
@@ -107,17 +134,19 @@ document.querySelector('.close-contact').addEventListener('click', ()=>{
 });
 
 
-document.querySelector('.close-workshops').addEventListener('click', ()=>{
+document.querySelector('.close-about').addEventListener('click', ()=>{
     if ((contact.classList.contains('hidden')) &&
-        (form.classList.contains('hidden'))){
+        (form.classList.contains('hidden')) &&
+        (workshops.classList.contains('hidden'))){
         image.classList.remove('dimmed');               
         toggleTitle();
-        toggleWorkshops();
+        toggleAbout();
     }
     
     if ((!contact.classList.contains('hidden')) ||
-        (!form.classList.contains('hidden'))){
-        toggleWorkshops();
+        (!form.classList.contains('hidden')) ||
+        (!workshops.classList.contains('hidden'))){
+        toggleAbout();
     } 
 });
 
@@ -137,6 +166,21 @@ document.querySelector('.close-form').addEventListener('click', ()=>{
 });
 
 
+document.querySelector('.close-workshops').addEventListener('click', ()=>{
+    if ((contact.classList.contains('hidden')) &&
+        (form.classList.contains('hidden'))){
+        image.classList.remove('dimmed');               
+        toggleTitle();
+        toggleWorkshops();
+    }
+    
+    if ((!contact.classList.contains('hidden')) ||
+        (!form.classList.contains('hidden'))){
+        toggleWorkshops();
+    } 
+});
+
+
 
 function toggleTitle (){
     title.classList.toggle('hidden');
@@ -148,15 +192,21 @@ function toggleContact (){
     contact.classList.toggle('visible');    
 }
 
-function toggleWorkshops (){
-    workshops.classList.toggle('hidden');
-    workshops.classList.toggle('visible');    
+function toggleAbout (){
+    about.classList.toggle('hidden');
+    about.classList.toggle('visible');    
 }
 
 function toggleForm (){
     form.classList.toggle('hidden');
     form.classList.toggle('visible');    
 }
+
+function toggleWorkshops (){
+    workshops.classList.toggle('hidden');
+    workshops.classList.toggle('visible');    
+}
+
 
 
 
