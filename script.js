@@ -3,8 +3,8 @@ const title = document.querySelector('.title');
 
 const contact = document.querySelector('.contact');
 const about = document.querySelector('.about');
-const workshops = document.querySelector('.workshops')
 const form = document.querySelector('.form')
+const workshops = document.querySelector('.workshops')
 
 const menuItemList = document.querySelectorAll('.menu-item');
 
@@ -25,8 +25,9 @@ menuItemList.forEach( item => {
                     }
                     
                     if ((image.classList.contains('dimmed')) && (
-                        (workshops.classList.contains('hidden')) &&
-                        (form.classList.contains('hidden')))) {
+                        (about.classList.contains('hidden')) &&
+                        (form.classList.contains('hidden')) &&
+                        (workshops.classList.contains('hidden')))) {
                         console.log('OFF CONTACT');
                         image.classList.remove('dimmed');
                         toggleTitle();  
@@ -35,8 +36,9 @@ menuItemList.forEach( item => {
                     }
                     
                     if ((image.classList.contains('dimmed')) && (
-                        (!workshops.classList.contains('hidden')) ||
-                        (!form.classList.contains('hidden')))) {
+                        (!about.classList.contains('hidden')) ||
+                        (!form.classList.contains('hidden')) ||
+                        (!workshops.classList.contains('hidden')))) {
                         console.log('OTHER(S) REMAINS');
                         toggleContact();
                         }
@@ -78,6 +80,7 @@ menuItemList.forEach( item => {
                     
                     if ((image.classList.contains('dimmed')) && (
                         (contact.classList.contains('hidden')) &&
+                        (about.classList.contains('hidden')) &&
                         (workshops.classList.contains('hidden')))) {
                         image.classList.remove('dimmed');
                         toggleTitle();
@@ -87,6 +90,7 @@ menuItemList.forEach( item => {
                         
                     if ((image.classList.contains('dimmed')) && (
                         (!contact.classList.contains('hidden')) ||
+                        (!about.classList.contains('hidden')) ||
                         (!workshops.classList.contains('hidden')))) {
                         toggleForm();
                     }
@@ -102,6 +106,7 @@ menuItemList.forEach( item => {
 
                     if ((image.classList.contains('dimmed')) && (
                         (contact.classList.contains('hidden')) &&
+                        (about.classList.contains('hidden')) &&
                         (form.classList.contains('hidden')))) {
                         image.classList.remove('dimmed');
                         toggleTitle();
@@ -111,6 +116,7 @@ menuItemList.forEach( item => {
 
                     if ((image.classList.contains('dimmed')) && (
                         (!contact.classList.contains('hidden')) ||
+                        (!about.classList.contains('hidden')) ||
                         (!form.classList.contains('hidden')))) {
                         toggleWorkshops();
                     }
