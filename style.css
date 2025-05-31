@@ -6,6 +6,8 @@
     --color-main: rgb(181, 214, 173);
     --color-selected:  rgb(27, 67, 17);
     --color-background: rgb(5, 28, 18);
+    --color-error: rgb(243, 188, 188);
+
 }
 
 * {
@@ -25,7 +27,7 @@
 h1 {
     font-size: 2.45em;
     font-weight: 700;
-    letter-spacing: 0.55em;
+    letter-spacing: 0.38em;
 
     line-height: normal;
 
@@ -149,9 +151,9 @@ img {
 .contact {
     grid-area: contact;
     display: flex;
-    justify-content: start;
+    justify-content: space-evenly;
     
-    padding: 2em 0 0 2em;
+    padding: 2em;
 
     gap: 5em; 
 }
@@ -160,13 +162,21 @@ img {
     position: relative;
 }
 
-.contact-photo {
-    width: 25vw;
+.contact-container {
+    max-width: 50%;
+}
 
+.contact-container :nth-child(4) {
+    margin-top: 2em;
+}
+
+.contact-photo img {
+    width: 22.5vw;
+    height: 15vw;
 }
 
 
-.contact span, .workshops span {
+.contact span, .about span, .workshops span {
     position: absolute;
 
     top: -1em;
@@ -184,7 +194,7 @@ img {
 .about {
     grid-area: about;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     
     padding-top: 2em;
 }
@@ -329,4 +339,29 @@ button:hover, button:focus {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease;
+}
+
+
+/* E R R O R */
+/* .error {
+    height: 1.2em;
+    width: 35ch;
+
+    padding: 0.15em 0 0.15em 0.33em;
+
+    font-size: 1em;
+    font-weight: 300;
+
+    color: var(--color-selected);
+    background-color: var(--color-error);
+    
+    border-radius: 0.33em;
+    border: none;
+    border-bottom: solid 2px var(--color-selected);
+    
+    resize: none;
+} */
+
+.error {
+    background-color: var(--color-error);
 }

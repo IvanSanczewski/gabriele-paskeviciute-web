@@ -304,9 +304,62 @@ document.addEventListener('keydown', (e)=> {
         title.classList.add('hidden');
         contact.classList.remove('visible');
         contact.classList.add('hidden');
-        workshops.classList.remove('visible');
-        workshops.classList.add('hidden');
+        about.classList.remove('visible');
+        about.classList.add('hidden');
         form.classList.remove('visible');
         form.classList.add('hidden');
+        workshops.classList.remove('visible');
+        workshops.classList.add('hidden');
     } 
-})
+});
+
+
+
+
+
+
+// F O R M    V A L I D A T I O N
+
+const formData = { 
+    company: document.getElementById('company'),
+    participants: document.getElementById('participants'),
+    city: document.getElementById('city'),
+    phone: document.getElementById('telephone'),
+    date: document.getElementById('date'),
+    email: document.getElementById('email'),
+    mailRegEx: /^([a-zA-Z0-9\._-]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+};
+const participants = document.getElementById('participants'); // Hardcoded workaround, it should work using the object formData
+
+const error = {
+    companyErr: false,
+    participantsErr: false,
+    cityErr: false,
+    phoneErr: false,
+    dateErr: false,
+    emailErr: false
+}
+
+const errorMsg = {
+    companyErrMsg: 'Please, enter a valid name for you or your company.',
+    participantsErrMsg: 'Please, enter a positive number between 4 and 22.',
+    cityErrMsg: 'Please, choose a city.',
+    phoneErrMsg: 'Please, enter a valid telephone number, including the country code.',
+    dateErrMsg: 'Please, enter at least one date for your workshop.',
+    emailErrMsg: 'Please, enter a correct valid email'
+}
+
+
+function validateForm(formField) {
+    console.log(error.participantsErr);
+    console.log(formField);
+    if (!formField || formField <= 4 || formField >= 23) error.participantsErr = true;
+    if (error.participantsErr) formData.participants.classList.add('error');
+    console.log(error.participantsErr);
+}
+
+document.addEventListener('focusout', (participants) => { //The second parameter should not be hardcoded, but differentiated according to wich field is used form the object formData
+    console.log(`FOCUS OUT FROM ${participants}`);
+    // if (formData == formData.participants) validateForm(formData.participants); // 
+    validateForm(participants);
+});
