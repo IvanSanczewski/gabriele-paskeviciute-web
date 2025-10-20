@@ -1,192 +1,146 @@
 const image = document.querySelector('.slides-container');
 const title = document.querySelector('.title');
 
-const contact = document.querySelector('.contact');
-const about = document.querySelector('.about');
-const form = document.querySelector('.form')
-const workshops = document.querySelector('.workshops')
+const overlays = {    
+    contact: document.querySelector('.contact'),
+    about: document.querySelector('.about'),
+    form: document.querySelector('.form'),
+    workshops: document.querySelector('.workshops')
+}
 
 const menuItemList = document.querySelectorAll('.menu-item');
 
+// Hides all overlays
+function hideAllOverlays () {
+    Object.values(overlays).forEach(overlay => {
+        overlay.classList.remove('visible');
+        overlay.classList.add('hidden');
+    })
+}
+
+// Shows specific overlay
+function showOverlay () {
+    Object.values(overlays).forEach(overlay => {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('visible');
+    })
+}
+
+
+// Check if specific overlay is visible
+function showOverlay () {
+    return Object.values(overlays).some(overlay =>
+        !overlay.classList.contains('hidden')
+    );
+}
+
+// Click menu item
 menuItemList.forEach( item => {
     item.addEventListener('click', () => {
             const menuItem = item.textContent;
             console.log(menuItem); 
 
+        // Map menu item to overlay names
+        const menuMap = {
+            'about & contact': 'contact',
+            'what is kokedama': 'kokedama',
+            'organise a workshop': 'form',
+            'workshops': 'workshops' 
+        };
 
-            switch (menuItem) {
-                case ('about & contact'):
-                    if (!image.classList.contains('dimmed')) {
-                        image.classList.add('dimmed');
-                        console.log('ON CONTACT');
-                        toggleTitle();
-                        toggleContact();
-                        break;
-                    }
-                    
-                    if ((image.classList.contains('dimmed')) && (
-                        (about.classList.contains('hidden')) &&
-                        (form.classList.contains('hidden')) &&
-                        (workshops.classList.contains('hidden')))) {
-                        console.log('OFF CONTACT');
-                        image.classList.remove('dimmed');
-                        toggleTitle();  
-                        toggleContact();
-                        break;
-                    }
-                    
-                    if ((image.classList.contains('dimmed')) && (
-                        (!about.classList.contains('hidden')) ||
-                        (!form.classList.contains('hidden')) ||
-                        (!workshops.classList.contains('hidden')))) {
-                        console.log('OTHER(S) REMAINS');
-                        toggleContact();
-                        }
-                    break;
-                        
-                case ('what is kokedama'):
-                    if (!image.classList.contains('dimmed')) {
-                        image.classList.add('dimmed');
-                        toggleTitle();  
-                        toggleAbout();
-                        break;
-                    }
+        const targetOverlay = menuMap[menuItem];
+        console.log('targetOverlay', targetOverlay);
+        console.log('menuMap', menuMap);
+        console.log('menuItem', menuMap[menuItem]);
 
-                    if ((image.classList.contains('dimmed')) && (
-                        (contact.classList.contains('hidden')) &&
-                        (form.classList.contains('hidden')) &&
-                        (workshops.classList.contains('hidden')))) {
-                        image.classList.remove('dimmed');
-                        toggleTitle();
-                        toggleAbout();
-                        break;
-                    }
+        if (!targetOverlay) return;
 
-                    if ((image.classList.contains('dimmed')) && (
-                        (!contact.classList.contains('hidden')) ||
-                        (!form.classList.contains('hidden')) ||
-                        (!workshops.classList.contains('hidden')))) {
-                        toggleAbout();
-                    }
-                break;
+        const isTargetVisible = !overlays[targetOverlay].classList.contains('hidden');
 
-                case ('organise a workshop'):
-                    if (!image.classList.contains('dimmed')) {
-                        image.classList.add('dimmed');
-                        toggleTitle();
-                        toggleForm();
-                        break;
-                    }
-                    
-                    if ((image.classList.contains('dimmed')) && (
-                        (contact.classList.contains('hidden')) &&
-                        (about.classList.contains('hidden')) &&
-                        (workshops.classList.contains('hidden')))) {
-                        image.classList.remove('dimmed');
-                        toggleTitle();
-                        toggleForm();
-                        break;
-                    }
-                        
-                    if ((image.classList.contains('dimmed')) && (
-                        (!contact.classList.contains('hidden')) ||
-                        (!about.classList.contains('hidden')) ||
-                        (!workshops.classList.contains('hidden')))) {
-                        toggleForm();
-                    }
-                break;
-
-                case ('workshops'):
-                    if (!image.classList.contains('dimmed')) {
-                        image.classList.add('dimmed');
-                        toggleTitle();  
-                        toggleWorkshops();
-                        break;
-                    }
-
-                    if ((image.classList.contains('dimmed')) && (
-                        (contact.classList.contains('hidden')) &&
-                        (about.classList.contains('hidden')) &&
-                        (form.classList.contains('hidden')))) {
-                        image.classList.remove('dimmed');
-                        toggleTitle();
-                        toggleWorkshops();
-                        break;
-                    }
-
-                    if ((image.classList.contains('dimmed')) && (
-                        (!contact.classList.contains('hidden')) ||
-                        (!about.classList.contains('hidden')) ||
-                        (!form.classList.contains('hidden')))) {
-                        toggleWorkshops();
-                    }
+        if (isTargetVisible) {
+            // Click the same item to hide it
+            hideAllOverlays();
+            image.classList.remove('dimmed');
+            title.classList.remove('hidden');
+            title.classList.add('visible');
+        } else {
+            // Show clicked overlay & hide the rest
+            hideAllOverlays();
+            showOverlay(targetOverlay);
+            
+            // Dim background & hide title
+            if (!image.classList.contains('dimmed')) {
+                image.classList.add('dimmed');
+                title.classList.remove('visible');
+                title.classList.add('hidden');
             }
-        })
-})
+        }
+    });
+});
 
 
+
+// Close button handlers
 document.querySelector('.close-contact').addEventListener('click', ()=>{
-    if ((workshops.classList.contains('hidden')) &&
-        (form.classList.contains('hidden'))){
-        image.classList.remove('dimmed');               
-        toggleTitle();
-        toggleContact();
-    } 
-
-    if ((!workshops.classList.contains('hidden')) ||
-        (!form.classList.contains('hidden'))){
-        toggleContact();
-    }
-});
-
-
-document.querySelector('.close-about').addEventListener('click', ()=>{
-    if ((contact.classList.contains('hidden')) &&
-        (form.classList.contains('hidden')) &&
-        (workshops.classList.contains('hidden'))){
-        image.classList.remove('dimmed');               
-        toggleTitle();
-        toggleAbout();
-    }
+    overlays.contact.classList.remove('visible');
+    overlays.contact.classList.add('hidden');
     
-    if ((!contact.classList.contains('hidden')) ||
-        (!form.classList.contains('hidden')) ||
-        (!workshops.classList.contains('hidden'))){
-        toggleAbout();
-    } 
+    if (!isAnyOverlayVisible()){
+        image.classList.remove('dimmed');               
+        title.classList.remove('hidden');
+        title.classList.add('visible');
+    }
 });
 
+document.querySelector('.close-kokedama').addEventListener('click', ()=>{
+    overlays.kokedama.classList.remove('visible');
+    overlays.kokedama.classList.add('hidden');
+    
+    if (!isAnyOverlayVisible()){
+        image.classList.remove('dimmed');               
+        title.classList.remove('hidden');
+        title.classList.add('visible');
+    }
+});
 
 document.querySelector('.close-form').addEventListener('click', ()=>{
-    if ((contact.classList.contains('hidden')) &&
-        (workshops.classList.contains('hidden'))){
+    overlays.form.classList.remove('visible');
+    overlays.form.classList.add('hidden');
+    
+    if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');               
-        toggleTitle();
-        toggleForm();
-    } 
-
-    if ((!contact.classList.contains('hidden')) ||
-        (!form.classList.contains('hidden'))){
-        toggleForm();
+        title.classList.remove('hidden');
+        title.classList.add('visible');
     }
 });
-
 
 document.querySelector('.close-workshops').addEventListener('click', ()=>{
-    if ((contact.classList.contains('hidden')) &&
-        (form.classList.contains('hidden'))){
-        image.classList.remove('dimmed');               
-        toggleTitle();
-        toggleWorkshops();
-    }
+    overlays.workshops.classList.remove('visible');
+    overlays.workshops.classList.add('hidden');
     
-    if ((!contact.classList.contains('hidden')) ||
-        (!form.classList.contains('hidden'))){
-        toggleWorkshops();
-    } 
+    if (!isAnyOverlayVisible()){
+        image.classList.remove('dimmed');               
+        title.classList.remove('hidden');
+        title.classList.add('visible');
+    }
 });
 
 
+// Escape key handler
+document.addEventListener('keydown', (e)=> {
+    if (e.key === 'Escape') {
+        hideAllOverlays();
+        image.classList.remove('dimmed');
+        title.classList.remove('visible');
+        title.classList.add('hidden');
+        // contact.classList.remove('visible');
+        // contact.classList.add('hidden');
+        // workshops.classList.remove('visible');
+        // workshops.classList.add('hidden');
+        // form.classList.remove('visible');
+        // form.classList.add('hidden');
+    } 
+})
 
 function toggleTitle (){
     title.classList.toggle('hidden');
@@ -297,16 +251,3 @@ const resetInterval = () => {
 
 startInterval();
 
-document.addEventListener('keydown', (e)=> {
-    if (e.key === 'Escape') {
-        image.classList.remove('dimmed');
-        title.classList.remove('visible');
-        title.classList.add('hidden');
-        contact.classList.remove('visible');
-        contact.classList.add('hidden');
-        workshops.classList.remove('visible');
-        workshops.classList.add('hidden');
-        form.classList.remove('visible');
-        form.classList.add('hidden');
-    } 
-})

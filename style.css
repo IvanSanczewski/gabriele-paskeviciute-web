@@ -130,7 +130,7 @@ img {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: 4fr 1fr 3fr;
     grid-template-areas:
-    "contact contact about"
+    "contact contact kokedama"
     "title title title"
     "form form workshops";
 
@@ -155,7 +155,7 @@ img {
     gap: 5em; 
 }
 
-.contact-container, .about-container, .workshops-container, .form-container {
+.contact-container, .kokedama-container, .workshops-container, .form-container {
     position: relative;
 }
 
@@ -180,8 +180,8 @@ img {
     left: 41em;
 }
 
-.about {
-    grid-area: about;
+.kokedama {
+    grid-area: kokedama;
     display: flex;
     justify-content: flex-start;
     
