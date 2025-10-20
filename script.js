@@ -15,7 +15,7 @@ menuItemList.forEach( item => {
 
 
             switch (menuItem) {
-                case ('contact'):
+                case ('about & contact'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
                         console.log('ON CONTACT');
@@ -44,7 +44,7 @@ menuItemList.forEach( item => {
                         }
                     break;
                         
-                case ('about kokedama'):
+                case ('what is kokedama'):
                     if (!image.classList.contains('dimmed')) {
                         image.classList.add('dimmed');
                         toggleTitle();  
