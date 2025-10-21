@@ -79,16 +79,16 @@ p {
 .menu-top {
     display: flex;
     justify-content: space-around;
-    
+
     margin-bottom: .35em;
-    
+
     width: 100%;
 }
 
 .menu-bottom {
     display: flex;
     justify-content: space-around;
-    
+
     width: 100%;
     margin-top: .35em;
 
@@ -165,7 +165,7 @@ img {
     align-items: center;
 
     position: absolute;
-    bottom: 5em; 
+    bottom: 5em;
 
     /* margin: auto;
     text-align: center; */
@@ -184,15 +184,16 @@ img {
 .contact {
     display: flex;
     justify-content: start;
-    
+
     padding: 2em 0 0 2em;
 
-    gap: 5em; 
+    gap: 5em;
 }
 
-.contact-container, .kokedama-container, .workshops-container, .form-container {
-    position: absolute;
-    top: 35vh;
+.contact-container, .kokedama-container, .form-container {
+    position: relative;
+    /* position: absolute; */
+    /* top: 35vh; */
 }
 
 .contact-photo {
@@ -200,7 +201,7 @@ img {
 
 }
 
-.contact span, .workshops span {
+.contact span {
     position: absolute;
 
     top: -1em;
@@ -208,7 +209,7 @@ img {
 }
 
 /* ***  F O R M  *** */
-.form { 
+.form {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -292,8 +293,31 @@ button:hover, button:focus {
 .workshops {
     display: flex;
     justify-content: center;
-    
-    padding-top: 2em;
+
+    height: 100%;
+}
+
+.workshops-container {
+    width: 65vw;
+
+    position: absolute;
+    top: 0;
+}
+
+.workshops-container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.workshops-container-upcoming {
+    display: flex;
+    flex-direction: column;
+}
+
+.workshops h2 {
+    margin-top: 3em;
 }
 
 .arrow-btn {
