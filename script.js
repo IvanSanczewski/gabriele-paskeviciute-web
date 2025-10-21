@@ -84,6 +84,7 @@ menuItemList.forEach( item => {
 // Handler for home CTA
 document.querySelector('.btn-next-workshop').addEventListener('click', ()=> {
     hideAllOverlays();
+    image.classList.add('dimmed');               
     title.classList.remove('visible');
     title.classList.add('hidden');
     showOverlay('workshops');

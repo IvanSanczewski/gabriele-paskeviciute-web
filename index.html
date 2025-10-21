@@ -54,7 +54,7 @@
                 </div>
             </div>
                 
-                <form class="form hidden" method="POST" action="send.php">
+            <form class="form hidden" method="POST" action="send.php">
                     <div class="form-container">
                         <div class="form-container-header">
                             <h3>I want to organise a workshop:</h3>
@@ -93,15 +93,52 @@
                     
                         <button>SEND REQUEST</button>
                     </div>
-                </form>
+            </form>
 
             <div class="workshops hidden">
                 <div class="workshops-container">
-                    <span class="close close-workshops">close</span>
-                    <h3>Past Workshops</h3>
-                    <p>Panevezis - 26th April</p>
-                    <h3>Upcoming Workshops</h3>
-                    <p>Panevezis - 28th May</p>
+                    <div class="workshops-container-header">
+                        <h2>Workshops</h2>
+                        <span class="close close-workshops">close</span>
+                    </div>
+                    <div class="workshops-container-past">
+                        <h3>Past Workshops</h3>
+                        <p>Panevezis - 26th April</p>
+                        <p>Panevezis - 28th May</p>
+                    </div>
+                    <div class="workshops-container-upcoming">
+                        <h2>Upcoming Workshops</h2>
+                        <p>Miesto Laboratorija - 2nd November</p>
+                        <form class="join-workshop" method="POST" action="send.php">
+                            <!-- <div class="form-container"> -->
+                            <div class="form-container-header">
+                            <h3>I want to join this workshop:</h3>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-input">
+                                <textarea name="name" id="name" cols="55" rows="1" placeholder="Name"></textarea>
+                            </div>
+                            
+                            <div class="form-input">
+                                <textarea name="surname" id="surname" cols="35" rows="1" placeholder="Surname"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-input">
+                                <textarea name="telephone" id="telephone" cols="35" rows="1" placeholder="Telephone Number"></textarea>
+                            </div>
+                            
+                            <div class="form-input">
+                                <textarea name="email" id="email" cols="35" rows="1" placeholder="Email"></textarea>
+                            </div>
+                        </div>
+                    
+                        <button>JOIN!</button>
+                    </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             
