@@ -58,17 +58,21 @@ menuItemList.forEach( item => {
 
         if (isTargetVisible) {
             // Click the same item to hide it
-            // hideAllOverlays();
+            hideAllOverlays();
+            console.log('IF');
+
             image.classList.remove('dimmed');
             title.classList.remove('hidden');
             title.classList.add('visible');
         } else {
             // Show clicked overlay & hide the rest
+            console.log('ELSE');
             hideAllOverlays();
             showOverlay(targetOverlay);
             
             // Dim background & hide title
             if (!image.classList.contains('dimmed')) {
+                console.log('IF - IF');
                 image.classList.add('dimmed');
                 title.classList.remove('visible');
                 title.classList.add('hidden');
