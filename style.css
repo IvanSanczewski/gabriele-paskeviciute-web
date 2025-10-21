@@ -3,9 +3,10 @@
     --image-border: 0.5em;
     --opacity-image: 0.15;
 
-    --color-main: rgb(181, 214, 173);
+    --color-main: rgb(162, 196, 153);
     --color-selected:  rgb(27, 67, 17);
     --color-background: rgb(5, 28, 18);
+    --color-background-title: rgb(5, 28, 18, 0.69);
 }
 
 * {
@@ -23,12 +24,21 @@
 }
 
 h1 {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: .5em 0;
+
+    text-align: center;
+
     font-size: 2.45em;
     font-weight: 700;
     letter-spacing: 0.55em;
+    word-spacing: .25em;
 
     line-height: normal;
 
+    background-color: var(--color-background-title);
 }
 
 h3, h4 {
@@ -138,12 +148,43 @@ img {
     min-width: 0;
     height: 100%;
 
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
 
     z-index: 2;
 }
+
+.title {
+    grid-area: title;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-workshop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5em; 
+
+    /* margin: auto;
+    padding: 2em;
+    text-align: center; */
+
+    background-color: var(--color-background-title);
+    border-radius: var(--image-border);
+}
+
+.btn-next-workshop {
+    display: block;
+}
+
 
 .contact {
     grid-area: contact;
@@ -163,7 +204,6 @@ img {
     width: 25vw;
 
 }
-
 
 .contact span, .workshops span {
     position: absolute;
@@ -188,22 +228,13 @@ img {
     padding-top: 2em;
 }
 
-.title {
-    grid-area: title;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title-top {
+/* .title-top {
     padding-right: 5em;
 }
 
 .title-bottom {
     padding-left: 5em;
-}
+} */
 
 .form { 
     display: flex;
