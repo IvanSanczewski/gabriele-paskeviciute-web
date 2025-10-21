@@ -73,15 +73,22 @@ menuItemList.forEach( item => {
             // Dim background & hide title
             if (!image.classList.contains('dimmed')) {
                 console.log('IF - IF');
-                image.classList.add('dimmed');
                 title.classList.remove('visible');
+                image.classList.add('dimmed');
                 title.classList.add('hidden');
             }
         }
     });
 });
 
+// Handler for home CTA
+document.querySelector('.btn-next-workshop').addEventListener('click', ()=> {
+    hideAllOverlays();
+    title.classList.remove('visible');
+    title.classList.add('hidden');
+    showOverlay('workshops');
 
+})
 
 // Close button handlers
 document.querySelector('.close-contact').addEventListener('click', ()=>{
@@ -245,7 +252,7 @@ document.addEventListener('keydown', (e) =>{
 
 // Automatic slides
 const startInterval = () => {
-    autoSlideInterval = setInterval(nextSlide, 7500);
+    autoSlideInterval = setInterval(nextSlide, 75000);
 };
 
 const resetInterval = () => {

@@ -6,7 +6,7 @@
     --color-main: rgb(162, 196, 153);
     --color-selected:  rgb(27, 67, 17);
     --color-background: rgb(5, 28, 18);
-    --color-background-title: rgb(5, 28, 18, 0.69);
+    --color-background-title: rgb(5, 28, 18, 0.5);
 }
 
 * {
@@ -41,12 +41,16 @@ h1 {
     background-color: var(--color-background-title);
 }
 
+h2 {
+    font-weight: 600;
+}
+
 h3, h4 {
     font-weight: 400;
 }
 
 p {
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .landing-page {
@@ -167,22 +171,24 @@ img {
 .next-workshop {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: .65em;
     align-items: center;
 
     position: absolute;
     bottom: 5em; 
 
     /* margin: auto;
-    padding: 2em;
     text-align: center; */
+    padding: 2em 4em;
 
     background-color: var(--color-background-title);
     border-radius: var(--image-border);
 }
 
 .btn-next-workshop {
-    display: block;
+    /* margin: 1em auto 0 auto; */
+    align-self: center;
+    margin-bottom: .7em;
 }
 
 
@@ -212,29 +218,12 @@ img {
     right: -3em;
 }
 
-
 .form span {
     position: absolute;
 
     top: 1em;
     left: 41em;
 }
-
-.kokedama {
-    grid-area: kokedama;
-    display: flex;
-    justify-content: flex-start;
-    
-    padding-top: 2em;
-}
-
-/* .title-top {
-    padding-right: 5em;
-}
-
-.title-bottom {
-    padding-left: 5em;
-} */
 
 .form { 
     display: flex;
@@ -299,7 +288,6 @@ button {
 
     cursor: pointer;
 }
-
 
 button:focus, textarea:focus, input:focus, a:-webkit-any-link  {
     outline: none;
