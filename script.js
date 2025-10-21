@@ -3,14 +3,14 @@ const title = document.querySelector('.title');
 
 const overlays = {    
     contact: document.querySelector('.contact'),
-    about: document.querySelector('.about'),
+    kokedama: document.querySelector('.kokedama'),
     form: document.querySelector('.form'),
     workshops: document.querySelector('.workshops')
 }
 
 const menuItemList = document.querySelectorAll('.menu-item');
 
-// Hides all overlays
+// Helper function to hide all overlays
 function hideAllOverlays () {
     Object.values(overlays).forEach(overlay => {
         overlay.classList.remove('visible');
@@ -18,17 +18,14 @@ function hideAllOverlays () {
     })
 }
 
-// Shows specific overlay
-function showOverlay () {
-    Object.values(overlays).forEach(overlay => {
-        overlay.classList.remove('hidden');
-        overlay.classList.add('visible');
-    })
+// Helper function to show only one overlay
+function showOverlay (targetOverlay) {
+    overlays[targetOverlay].classList.remove('hidden');
+    overlays[targetOverlay].classList.add('visible');
 }
 
-
 // Check if specific overlay is visible
-function showOverlay () {
+function isAnyOverlayVisible () {
     return Object.values(overlays).some(overlay =>
         !overlay.classList.contains('hidden')
     );
@@ -37,9 +34,8 @@ function showOverlay () {
 // Click menu item
 menuItemList.forEach( item => {
     item.addEventListener('click', () => {
-            const menuItem = item.textContent;
-            console.log(menuItem); 
-
+        const menuItem = item.textContent;
+        
         // Map menu item to overlay names
         const menuMap = {
             'about & contact': 'contact',
@@ -47,19 +43,22 @@ menuItemList.forEach( item => {
             'organise a workshop': 'form',
             'workshops': 'workshops' 
         };
-
+        
         const targetOverlay = menuMap[menuItem];
+        console.log('item', item);
+        console.log(menuItem); 
+        console.log('menuItem', menuMap[menuItem]);
         console.log('targetOverlay', targetOverlay);
         console.log('menuMap', menuMap);
-        console.log('menuItem', menuMap[menuItem]);
 
         if (!targetOverlay) return;
 
         const isTargetVisible = !overlays[targetOverlay].classList.contains('hidden');
+        console.log(isTargetVisible);
 
         if (isTargetVisible) {
             // Click the same item to hide it
-            hideAllOverlays();
+            // hideAllOverlays();
             image.classList.remove('dimmed');
             title.classList.remove('hidden');
             title.classList.add('visible');
@@ -120,8 +119,9 @@ document.querySelector('.close-workshops').addEventListener('click', ()=>{
     
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');               
-        title.classList.remove('hidden');
-        title.classList.add('visible');
+        // title.classList.remove('hidden');
+        // title.classList.add('visible');
+        toggleTitle();
     }
 });
 
