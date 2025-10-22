@@ -52,7 +52,7 @@ h2 {
 }
 
 h3, h4 {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 p {
@@ -247,12 +247,12 @@ img {
 textarea {
     height: 1.2em;
     width: 35ch;
-
-    padding: 0.15em 0 0.15em 0.33em;
-
+    
+    padding: 0.15em 0 1.25em 0.33em;
+    
     font-size: 1em;
     font-weight: 300;
-
+    
     color: var(--color-selected);
     background-color: var(--color-main);
 
@@ -298,7 +298,7 @@ button:hover, button:focus {
 
 .workshops {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     height: 100%;
 }
@@ -324,10 +324,26 @@ button:hover, button:focus {
 .workshops-upcoming {
     display: flex;
     flex-direction: column;
+
+    margin-top: 5em;
 }
 
 .workshops h2 {
     margin-top: 2em;
+}
+
+.join-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    
+    margin-top: 1.5em;
+}
+
+.join-container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .arrow-btn {
