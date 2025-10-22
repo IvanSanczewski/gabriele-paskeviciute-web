@@ -187,32 +187,51 @@ img {
     margin-bottom: .7em;
 }
 
-.contact {
-    display: flex;
-    justify-content: start;
-
-    padding: 2em 0 0 2em;
-
-    gap: 5em;
-}
-
-.contact-container, .kokedama-container, .form-container {
+.kokedama-container, .form-container {
     position: relative;
     /* position: absolute; */
     /* top: 35vh; */
 }
 
-.contact-photo {
-    width: 25vw;
 
+/* ***  C O N T A C T  *** */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    width: 65vw;
+
+    /* padding: 2em 0 0 2em; */
+
+    gap: 2em;
 }
 
-.contact span {
+.contact-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+
+.contact-photo {
+    width: 25vw;
+}
+
+/* .contact span {
     position: absolute;
 
     top: -1em;
     right: -3em;
-}
+} */
 
 /* ***  F O R M  *** */
 .form {
@@ -240,9 +259,9 @@ img {
     gap: clamp(1.5em, 4vw, 2.5em);
 }
 
-.form-input {
+/* .form-input {
     display: flex;
-}
+} */
 
 textarea {
     height: 1.2em;
@@ -261,6 +280,10 @@ textarea {
     border-bottom: solid 2px var(--color-selected);
 
     resize: none;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 button {
@@ -301,6 +324,10 @@ button:hover, button:focus {
     justify-content: center;
 
     height: 100%;
+
+    /* position: absolute;
+    top: 0;
+    left: 0; */
 }
 
 .workshops-container {
