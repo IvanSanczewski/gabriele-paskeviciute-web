@@ -188,7 +188,8 @@ function toggleWorkshops (){
 
 
 
-// S L I D E R S
+// S L I D E R S //
+// S L I D E R S //
 
 const slides = [
     '/assets/ISP_KOKEDAMA_3.png',
@@ -262,4 +263,39 @@ const resetInterval = () => {
 };
 
 startInterval();
+
+
+
+// C A R D S //
+// C A R D S //
+
+const pastWorkshopsCards = [
+    {
+        id:"25_1",
+        location: "Panevezys",
+        date: "26th April",
+        image: "/assets/ISP_KOKEDAMA_3.png"
+    },
+    {
+        id:"25_2",
+        location: "Panevezys",
+        date: "28th May",
+        image: "/assets/KOKEDAMA_GRAIN_1500.jpg"
+    }
+];
+
+
+
+pastWorkshopsCards.forEach(card => {
+    console.log('FOREACH');
+    document.querySelector('.workshops-past-container').innerHTML += `
+        <div class="workshop-card">
+            <img src="${card.image}" alt="Workshop at ${card.location} on ${card.date}" class="workshop-card-image"/>
+            <div class="workshop-card-info">
+                <h3 class="workshop-card-location">${card.location}</h3>
+                <p class="workshop-card-date">${card.date}</p>
+            </div>
+        </div>
+    `;
+})
 
