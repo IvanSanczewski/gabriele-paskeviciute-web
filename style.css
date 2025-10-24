@@ -238,12 +238,7 @@ img {
     padding-left: 1em
 }
 
-/* .contact span {
-    position: absolute;
 
-    top: -1em;
-    right: -3em;
-} */
 
 
 /* ***  K O K E D A M A  *** */
@@ -260,7 +255,6 @@ img {
     left: 22.50vw;
 }
 
-
 .kokedama-header {
     display: flex;
     flex-direction: row;
@@ -274,7 +268,7 @@ img {
     gap: 3.5em;
 }
 
-.contact-photo {
+.kokedama-photo {
     min-width: 400px;
     min-height: 400px;
 }
@@ -288,12 +282,19 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: absolute;
+    top: 18vh;
+    left: 22.50vw; 
+
+    gap: .55em;
+    width: 55vw;
 }
 
 .form-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
 }
 
@@ -329,6 +330,11 @@ textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+textarea::placeholder {
+    font-size: 0.85em;
+    font-weight: 300; 
 }
 
 button {
@@ -369,7 +375,7 @@ button:hover, button:focus {
     display: flex;
     justify-content: center;
 
-    height: 100%;
+    /* height: 100%; */
 
     /* position: absolute;
     top: 0;
@@ -398,7 +404,7 @@ button:hover, button:focus {
     display: flex;
     flex-direction: column;
 
-    margin-top: 5em;
+    margin-top: 7em;
 }
 
 .workshops h2 {
@@ -408,16 +414,16 @@ button:hover, button:focus {
 .join-container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .55em;
     
     margin-top: 1.5em;
 }
 
-.join-container-header {
+/* .join-container-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
 .arrow-btn {
     position: absolute;
