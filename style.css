@@ -209,7 +209,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1.25em;
-    
+
     width: 55vw;
     position: absolute;
     top: 8vh;
@@ -248,7 +248,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1.25em;
-    
+
     width: 55vw;
     position: absolute;
     top: 8vh;
@@ -285,7 +285,7 @@ img {
 
     position: absolute;
     top: 18vh;
-    left: 22.50vw; 
+    left: 22.50vw;
 
     gap: .55em;
     width: 55vw;
@@ -308,23 +308,23 @@ img {
     align-items: center;
     height: 2.25em;
 }
-    
+
 textarea {
     height: 1.2em;
     width: 35ch;
-    
+
     padding: 0.15em 0 1.25em 0.33em;
-    
+
     font-size: 1em;
     font-weight: 300;
-    
+
     color: var(--color-selected);
     background-color: var(--color-main);
-    
+
     border-radius: 0.33em;
     border: none;
     border-bottom: solid 2px var(--color-selected);
-    
+
     resize: none;
     overflow: hidden;
     -webkit-appearance: none;
@@ -334,7 +334,7 @@ textarea {
 
 textarea::placeholder {
     font-size: 0.85em;
-    font-weight: 300; 
+    font-weight: 300;
 }
 
 button {
@@ -396,26 +396,65 @@ button:hover, button:focus {
     align-items: baseline;
 }
 
-.workshops-past {
-    color: red
-}
-
 .workshops-upcoming {
     display: flex;
     flex-direction: column;
 
-    margin-top: 7em;
+    margin-top: 3em;
 }
 
 .workshops h2 {
-    margin-top: 2em;
+    margin-top: 1.8em;
 }
+
+/* *** C A R D S *** */
+/* *** C A R D S *** */
+
+.workshops-past-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    /* grid-template-rows: repeat (4, 290px); */
+    gap: 1em;
+}
+
+.workshop-card {
+    display: flex;
+    flex-direction: column;
+    /* width: 250px;
+    height: 250px; */
+}
+
+.workshop-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+.workshop-card-info {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--color-main);
+    border-bottom-left-radius: var(--image-border);
+    border-bottom-right-radius: var(--image-border);
+
+}
+
+.workshop-card-info p, h4 {
+    color: var(--color-selected);
+    padding: 0 0.35em 0 0.35em;
+}
+
 
 .join-container {
     display: flex;
     flex-direction: column;
     gap: .55em;
-    
+
     margin-top: 1.5em;
 }
 

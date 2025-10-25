@@ -120,8 +120,9 @@ document.querySelector('.close-form').addEventListener('click', ()=>{
     
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');               
-        title.classList.remove('hidden');
-        title.classList.add('visible');
+        // title.classList.remove('hidden');
+        // title.classList.add('visible');
+        toggleTitle();
     }
 });
 
@@ -143,14 +144,7 @@ document.addEventListener('keydown', (e)=> {
     if (e.key === 'Escape') {
         hideAllOverlays();
         image.classList.remove('dimmed');
-        title.classList.remove('visible');
-        title.classList.add('hidden');
-        // contact.classList.remove('visible');
-        // contact.classList.add('hidden');
-        // workshops.classList.remove('visible');
-        // workshops.classList.add('hidden');
-        // form.classList.remove('visible');
-        // form.classList.add('hidden');
+        toggleTitle();
     } 
 })
 
@@ -269,33 +263,84 @@ startInterval();
 // C A R D S //
 // C A R D S //
 
-const pastWorkshopsCards = [
+const pastWorkshops = [
     {
         id:"25_1",
-        location: "Panevezys",
-        date: "26th April",
-        image: "/assets/ISP_KOKEDAMA_3.png"
+        location: "Kazis Vernalis",
+        date: "March 2024",
+        image: "/assets/ISP_KOKEDAMA_test.jpg",
+        caption: "Workshop image"
     },
     {
         id:"25_2",
-        location: "Panevezys",
-        date: "28th May",
-        image: "/assets/KOKEDAMA_GRAIN_1500.jpg"
+        location: "Booking.com",
+        date: "October 2024",
+        image: "/assets/ISP_KOKEDAMA_3.png",
+        caption: "Workshop image"
+    },
+    {
+        id:"25_3",
+        location: "Hostinger",
+        date: "March 2025",
+        image: "/assets/ISP_KOKEDAMA_WSP_405.jpg",
+        caption: "Workshop image"
+    },
+    {
+        id:"25_4",
+        location: "Artoteka",
+        date: "March 2025",
+        image: "/assets/Gabriele-portrait-1.jpg",
+        caption: "Workshop image"
+    },
+    {
+        id:"25_5",
+        location: "Midene",
+        date: "March 2025",
+        image: "/assets/Gabriele-portrait-2.JPG",
+        caption: "Workshop image"
+    },
+    {
+        id:"25_6",
+        location: "Midene",
+        date: "March 2025",
+        image: "/assets/ISP_KOKEDAMA_WSP_389.jpg",
+        caption: "Workshop image"
+    },
+    {
+        id:"25_7",
+        location: "SOC",
+        date: "March 2025",
+        image: "/assets/KOKEDAMA_GRAIN_1500.jpg",
+        caption: "Workshop image"
     }
 ];
+const pastWorkshopsContainer = document.querySelector('.workshops-past-cards-container');
 
+pastWorkshops.forEach(card => {
+    const divCard = document.createElement('div');
+    divCard.classList.add('workshop-card');
 
+    const img = document.createElement('img');
+    img.classList.add('workshop-card-image');
+    img.src = card.image;
+    img.alt = card.caption;
 
-pastWorkshopsCards.forEach(card => {
-    console.log('FOREACH');
-    document.querySelector('.workshops-past-container').innerHTML += `
-        <div class="workshop-card">
-            <img src="${card.image}" alt="Workshop at ${card.location} on ${card.date}" class="workshop-card-image"/>
-            <div class="workshop-card-info">
-                <h3 class="workshop-card-location">${card.location}</h3>
-                <p class="workshop-card-date">${card.date}</p>
-            </div>
-        </div>
-    `;
-})
+    const divCardInfo = document.createElement('div');
+    divCardInfo.classList.add('workshop-card-info');
+
+    const cardTitle = document.createElement('h4');
+    cardTitle.classList.add('workshop-card-location');
+    cardTitle.textContent = card.location;
+
+    const p = document.createElement('p');
+    p.classList.add('workshop-card-date');
+    p.textContent = card.date;
+
+    divCardInfo.appendChild(cardTitle);
+    divCardInfo.appendChild(p);
+    divCard.appendChild(img);
+    divCard.appendChild(divCardInfo);
+
+    pastWorkshopsContainer.appendChild(divCard);
+});
 
