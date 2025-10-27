@@ -321,23 +321,34 @@ pastWorkshops.forEach(card => {
     divCard.classList.add('workshop-card');
 
     const img = document.createElement('img');
-    img.classList.add('workshop-card-image');
+    img.classList.add('workshop-card__image');
     img.src = card.image;
     img.alt = card.caption;
 
     const divCardInfo = document.createElement('div');
-    divCardInfo.classList.add('workshop-card-info');
+    divCardInfo.classList.add('workshop-card__info');
 
     const cardTitle = document.createElement('h4');
-    cardTitle.classList.add('workshop-card-location');
+    cardTitle.classList.add('workshop-card__location');
+    cardTitle.textContent = card.location;
+    
+    const divCardDetails = document.createElement('div');
+    divCardInfo.classList.add('workshop-card__details');
+    
+    const cardCity = document.createElement('p');
+    cardTitle.classList.add('workshop-card__city');
     cardTitle.textContent = card.location;
 
-    const p = document.createElement('p');
+    const cardDate = document.createElement('p');
     p.classList.add('workshop-card-date');
     p.textContent = card.date;
 
+    divCardDetails.appendChild(cardCity);
+    divCardDetails.appendChild(cardDate);
+
     divCardInfo.appendChild(cardTitle);
-    divCardInfo.appendChild(p);
+    divCardInfo.appendChild(divCardDetails);
+
     divCard.appendChild(img);
     divCard.appendChild(divCardInfo);
 
