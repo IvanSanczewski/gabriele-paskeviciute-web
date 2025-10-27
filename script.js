@@ -267,49 +267,49 @@ const pastWorkshops = [
     {
         id:"25_1",
         location: "Kazis Vernalis",
-        date: "March 2024",
+        date: "March 24",
         image: "/assets/ISP_KOKEDAMA_test.jpg",
         caption: "Workshop image"
     },
     {
         id:"25_2",
         location: "Booking.com",
-        date: "October 2024",
+        date: "October 24",
         image: "/assets/ISP_KOKEDAMA_3.png",
         caption: "Workshop image"
     },
     {
         id:"25_3",
         location: "Hostinger",
-        date: "March 2025",
+        date: "March 25",
         image: "/assets/ISP_KOKEDAMA_WSP_405.jpg",
         caption: "Workshop image"
     },
     {
         id:"25_4",
         location: "Artoteka",
-        date: "March 2025",
+        date: "March 25",
         image: "/assets/Gabriele-portrait-1.jpg",
         caption: "Workshop image"
     },
     {
         id:"25_5",
         location: "Midene",
-        date: "March 2025",
+        date: "March 25",
         image: "/assets/Gabriele-portrait-2.JPG",
         caption: "Workshop image"
     },
     {
         id:"25_6",
         location: "Midene",
-        date: "March 2025",
+        date: "March 25",
         image: "/assets/ISP_KOKEDAMA_WSP_389.jpg",
         caption: "Workshop image"
     },
     {
         id:"25_7",
         location: "SOC",
-        date: "March 2025",
+        date: "March 25",
         image: "/assets/KOKEDAMA_GRAIN_1500.jpg",
         caption: "Workshop image"
     }

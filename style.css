@@ -411,22 +411,30 @@ button:hover, button:focus {
 /* *** C A R D S *** */
 
 .workshops-past-cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 250px);
-    /* grid-template-rows: repeat (4, 290px); */
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to a new row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scroll-snap-align: start;
     gap: 1em;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none ; /* Hide scrollbar for Firefox */
+
 }
 
+.workshops-past-cards-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+} 
+
 .workshop-card {
+    flex: 0 0 250px; /* Set a fixed width for all cards */
     display: flex;
     flex-direction: column;
-    /* width: 250px;
-    height: 250px; */
 }
 
 .workshop-card img {
     width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 9; /* Maintain a consistent aspect ratio */
     object-fit: cover;
 
     border-bottom-left-radius: 0;
@@ -437,16 +445,23 @@ button:hover, button:focus {
 .workshop-card-info {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 
     background-color: var(--color-main);
     border-bottom-left-radius: var(--image-border);
     border-bottom-right-radius: var(--image-border);
-
 }
 
 .workshop-card-info p, h4 {
-    color: var(--color-selected);
     padding: 0 0.35em 0 0.35em;
+        
+    color: var(--color-selected);
+
+    font-size: 0.9em;
+}
+
+.workshop-card-info p {
+    font-size: 0.75em;
 }
 
 
@@ -480,10 +495,12 @@ button:hover, button:focus {
 }
 
 .left {
+    left: -1.5em;
     left: -1.085em;
 }
 
 .right {
+    right: -1.5em;
     right: -1.085em;
 }
 
