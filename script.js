@@ -266,8 +266,9 @@ startInterval();
 const pastWorkshops = [
     {
         id:"25_1",
-        location: "Kazis Vernalis",
+        location: "Kazio Varnelio namai-muziejus",
         date: "March 24",
+        city: "Vilnius",
         image: "/assets/ISP_KOKEDAMA_test.jpg",
         caption: "Workshop image"
     },
@@ -275,6 +276,7 @@ const pastWorkshops = [
         id:"25_2",
         location: "Booking.com",
         date: "October 24",
+        city: "Vilnius",
         image: "/assets/ISP_KOKEDAMA_3.png",
         caption: "Workshop image"
     },
@@ -282,6 +284,7 @@ const pastWorkshops = [
         id:"25_3",
         location: "Hostinger",
         date: "March 25",
+        city: "Kaunas",
         image: "/assets/ISP_KOKEDAMA_WSP_405.jpg",
         caption: "Workshop image"
     },
@@ -289,6 +292,7 @@ const pastWorkshops = [
         id:"25_4",
         location: "Artoteka",
         date: "March 25",
+        city: "Vilnius",
         image: "/assets/Gabriele-portrait-1.jpg",
         caption: "Workshop image"
     },
@@ -296,6 +300,7 @@ const pastWorkshops = [
         id:"25_5",
         location: "Midene",
         date: "March 25",
+        city: "Panevezys",
         image: "/assets/Gabriele-portrait-2.JPG",
         caption: "Workshop image"
     },
@@ -303,6 +308,7 @@ const pastWorkshops = [
         id:"25_6",
         location: "Midene",
         date: "March 25",
+        city: "Panevezys",
         image: "/assets/ISP_KOKEDAMA_WSP_389.jpg",
         caption: "Workshop image"
     },
@@ -310,6 +316,7 @@ const pastWorkshops = [
         id:"25_7",
         location: "SOC",
         date: "March 25",
+        city: "Ukmerge",
         image: "/assets/KOKEDAMA_GRAIN_1500.jpg",
         caption: "Workshop image"
     }
@@ -333,15 +340,15 @@ pastWorkshops.forEach(card => {
     cardTitle.textContent = card.location;
     
     const divCardDetails = document.createElement('div');
-    divCardInfo.classList.add('workshop-card__details');
+    divCardDetails.classList.add('workshop-card__details');
     
     const cardCity = document.createElement('p');
-    cardTitle.classList.add('workshop-card__city');
-    cardTitle.textContent = card.location;
+    cardCity.classList.add('workshop-card__city');
+    cardCity.textContent = card.city;
 
     const cardDate = document.createElement('p');
-    p.classList.add('workshop-card-date');
-    p.textContent = card.date;
+    cardDate.classList.add('workshop-card__date');
+    cardDate.textContent = card.date;
 
     divCardDetails.appendChild(cardCity);
     divCardDetails.appendChild(cardDate);

@@ -432,36 +432,46 @@ button:hover, button:focus {
     flex-direction: column;
 }
 
-.workshop-card img {
+.workshop-card__image {
     width: 100%;
     aspect-ratio: 16 / 9; /* Maintain a consistent aspect ratio */
     object-fit: cover;
 
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
 }
 
-.workshop-card-info {
+.workshop-card__info {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
 
+    color: var(--color-selected);
     background-color: var(--color-main);
+    
     border-bottom-left-radius: var(--image-border);
     border-bottom-right-radius: var(--image-border);
 }
 
-.workshop-card-info p, h4 {
-    padding: 0 0.35em 0 0.35em;
-        
-    color: var(--color-selected);
-
-    font-size: 0.9em;
+.workshop-card__location{
+    padding-left: 0.5em;
+    
+    font-size: 0.85em;
+    font-weight: 600;
 }
 
-.workshop-card-info p {
+.workshop-card__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
     font-size: 0.75em;
+
+    border-bottom-left-radius: var(--image-border);
+    border-bottom-right-radius: var(--image-border);
+}
+
+.workshop-card__city, .workshop-card__date {
+    padding: 0 0.5em 0 0.5em;
 }
 
 
