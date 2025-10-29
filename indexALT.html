@@ -14,76 +14,174 @@
     <title>Gabriele Paskeviciute</title>
 </head>
 <body class="landing-page">
-    <div class="menu-top">
-        <span class="menu-item dimmer">contact</span>
-        <span class="menu-item dimmer">workshops</span>
+    <div class="off-canvas-menu hidden">
+        <span class="close close-menu">&times;</span>
+        <ul>
+            <li><a href="#">about & contact</a></li>
+            <li><a href="#">what is kokedama</a></li>
+            <li><a href="#">organise a workshop</a></li>
+            <li><a href="#">workshops</a></li>
+        </ul>
     </div>
-    <div class="image-slider">
-        
-        <div class="content">
 
+    <div class="menu-top">
+        <span class="menu-item">about & contact</span>
+        <span class="menu-item">what is kokedama</span>
+    </div>
+
+    <div class="image-slider">
+        <div class="content">
             <div class="contact hidden">
-                <h3>GABRIELE PASKEVICIUTE</h3>
-                <p>gabriele.paskeviciute@gmail.com</p>
-                <p>+37068748208</p>
+                    <div class="contact-header">
+                        <h2>About me</h2>
+                        <span class="close close-contact">close</span> 
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-photo">
+                            <img src="/assets/Gabriele-portrait-1.jpg" alt="Portrait Gabriele">
+                        </div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+                        </p>
+                    </div>
+                    <div class="contact-details">
+                        <h3>GABRIELE PASKEVICIUTE</h3> 
+                        <p><a href="mailto:gabriele.paskeviciute@gmail.com">gabriele.paskeviciute@gmail.com</a></p>
+                        <p>+37068748208</p>
+                    </div>
             </div>
             
+            <div class="kokedama hidden">
+                <div class="kokedama-header">
+                    <h2>All about Kokedama</h2>
+                    <span class="close close-kokedama">close</span> 
+                </div>
+                <div class="kokedama-info">
+                    <div class="kokedama-photo">
+                        <img src="/assets/ISP_KOKEDAMA_WSP_394.jpg" alt="Portrait Gabriele">
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+                    </p>
+                </div>
+            </div>            
+            
+            <div class="title visible">
+                <h1>KOKEDAMA WORKSHOPS</h1>
+                
+                <div class="next-workshop">
+                    <h2>Next Workshop</h2>
+                    <p>Miesto Laboratorija, Vilnius -  8th November</p> 
+                    <button class="btn-next-workshop" data-overlay="workshops">JOIN!</button>
+                </div>
+            </div>
+                
+            <form class="form hidden" method="POST" action="send.php">
+                <!-- <div class="form-container"> -->
+                    <div class="form-header">
+                        <h2>I want to organise a workshop:</h2>
+                        <p class="close close-form">close</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-input">
+                            <textarea name="company" id="company" cols="55" rows="1" placeholder="Company Name"></textarea>        
+                        </div>
+
+                        <div class="form-input">
+                            <textarea name="participants" id="participants" cols="35" rows="1" placeholder="Number of Participants"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-input">
+                            <textarea name="city" id="city" cols="35" rows="1" placeholder="City"></textarea>
+                        </div>
+
+                        <div class="form-input">
+                            <textarea name="telephone" id="telephone" cols="35" rows="1" placeholder="Telephone Number"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-input">
+                            <textarea name="date" id="date" cols="35" rows="1" placeholder="Desired Date"></textarea>
+                        </div>
+
+                        <div class="form-input">
+                            <textarea name="email" id="email" cols="35" rows="1" placeholder="Email"></textarea>
+                        </div>
+                    </div>
+
+                    <button>SEND REQUEST</button>
+                </div>
+            </form>
+
             <div class="workshops hidden">
-                <h4>Past Workshops</h4>
-                <p>Panevezis - 26th April</p>
-                <h4>Upcoming Workshops</h4>
-                <p>Panevezis - 28th May</p>
-            </div>
-
-            <div class="title hidden">
-                <h1 class="title-top">KOKEDAMA</h1>
-                <h1 class="title-bottom">WORKSHOPS</h1>
-            </div>
-
-            <div class="form hidden">
-                <h3>I want to organise a workshop:</h3>
-
-                <div class="form-row">
-                    <div class="form-input">
-                        <textarea name="company" id="company" cols="25" rows="1" placeholder="Company Name"></textarea>
+                <div class="workshops-container">
+                    <div class="workshops-header">
+                        <h2>Workshops</h2>    
+                        <span class="close close-workshops">close</span>
                     </div>
-                    
-                    <div class="form-input">
-                        <textarea name="participants" id="participants" cols="25" rows="1" placeholder="Number of Participants"></textarea>
+
+                    <div class="workshops-past">
+                        <h3>Past Workshops</h3>
+                        <div class="workshops-past-cards-container">
+                        <!-- container for the cards -->
+                        </div>
+                    </div>
+
+                    <div class="workshops-upcoming">
+                        <h3>Upcoming Workshops</h3>
+                        <p>Miesto Laboratorija - 8th November</p>
+                        <form class="form-container" method="POST" action="send.php">
+                            <div class="join-container">
+                                <div class="join-container-header">
+                                    <h3>I want to join this workshop</h3>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-input">
+                                        <textarea name="name" id="name" cols="55" rows="1" placeholder="Name"></textarea>        
+                                    </div>
+                                    <div class="form-input">
+                                        <textarea name="surname" id="surname" cols="35" rows="1" placeholder="Surname"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-input">
+                                        <textarea name="telephone" id="telephone" cols="35" rows="1" placeholder="Telephone Number"></textarea>
+                                    </div>
+                                    <div class="form-input">
+                                        <textarea name="email" id="email" cols="35" rows="1" placeholder="Email"></textarea>
+                                    </div>
+                                </div>
+
+                                <button>SEND REQUEST</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-input">
-                        <textarea name="city" id="city" cols="25" rows="1" placeholder="City"></textarea>
-                    </div>
-                    
-                    <div class="form-input">
-                        <textarea name="telephone" id="telephone" cols="25" rows="1" placeholder="Telephone Number"></textarea>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-input">
-                        <textarea name="date" id="date" cols="25" rows="1" placeholder="Desired Date"></textarea>
-                    </div>
-                    
-                    <div class="form-input">
-                        <textarea name="email" id="email" cols="25" rows="1" placeholder="Email"></textarea>
-                    </div>
-                </div>
-
-
-                <button>SEND REQUEST</button>
             </div>
-
         </div>
-        <img id="image" src="/assets/ISP_KOKEDAMA_test.jpg" alt="a kokedama plant">
+        
+        <div class="slides-container">
+            <!-- images will be added dinamically from the slides array -->
+        </div>
+
+        <span class="arrow-btn left"><</span>
+        <span class="arrow-btn right">></span>
     </div>
+    </div>
+
     <div class="menu-bottom">
-        <span class="menu-item dimmer">organise a workshop</span>
+        <span class="menu-item">organise a workshop</span>
+        <span class="menu-item">workshops</span>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
