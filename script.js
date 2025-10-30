@@ -362,19 +362,16 @@ pastWorkshops.forEach(card => {
     pastWorkshopsContainer.appendChild(divCard);
 });
 
-// Off-canvas menu logic
-const menuToggle = document.querySelector('.menu-toggle');
+
+
+
+// O F F - C A N V A S   M E N U //
+// O F F - C A N V A S   M E N U //
+
+const toggleMenuIcon = document.querySelector('.menu-toggle');
 const offCanvasMenu = document.querySelector('.off-canvas-menu');
 
-menuToggle.addEventListener('click', () => {
-    const isOpen = offCanvasMenu.classList.contains('visible');
-
-    if (isOpen) {
-        offCanvasMenu.classList.remove('visible');
-        menuToggle.classList.remove('open');
-    } else {
-        offCanvasMenu.classList.add('visible');
-        menuToggle.classList.add('open');
-    }
-});
-
+toggleMenuIcon.addEventListener('click', () =>{
+    toggleMenuIcon.classList.toggle('active');
+    offCanvasMenu.classList.toggle('active');
+})
