@@ -370,8 +370,44 @@ pastWorkshops.forEach(card => {
 
 const toggleMenuIcon = document.querySelector('.menu-toggle');
 const offCanvasMenu = document.querySelector('.off-canvas-menu');
+const offCanvasMenuItems = document.querySelectorAll('.ocm-item a');
 
+// Toggle menu on burger/X click
 toggleMenuIcon.addEventListener('click', () =>{
     toggleMenuIcon.classList.toggle('active');
     offCanvasMenu.classList.toggle('active');
-})
+});
+
+// Close menu when clicking on a menu item
+offCanvasMenuItems.forEach(item => {
+    item.addEventListener('click', (event)=>{
+        event.preventDefault();
+        const menuText = item.textContent;
+
+        // Close the off-canvas menu
+        toggleMenuIcon.classList.remove('active');
+        offCanvasMenu.classList.remove('active');
+
+        // Map menu item to overlay names
+        const menuMap = {
+            'about & contact': 'contact',
+            'what is kokedama': 'kokedama',
+            'organise a workshop': 'form',
+            'workshops': 'workshops' 
+        };      
+
+        const targetOverlay = menuMap[menuText];
+
+        if (!targetOverlay) return;
+
+        // Show the correspnding overlay
+        hideAllOverlays();
+        showOverlay(targetOverlay);
+
+        // Dim background & hide title
+        // title.classList.remove('visible');
+        toggleTitle();
+        image.classList.add('dimmed');
+        image.classList.add('hidden');
+    });
+});
