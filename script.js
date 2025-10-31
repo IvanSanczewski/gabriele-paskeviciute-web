@@ -371,12 +371,13 @@ const offCanvasMenuItems = document.querySelectorAll('.ocm-item a');
 
 // Toggle menu on burger/X click
 toggleMenuIcon.addEventListener('click', () =>{
+    // When title is not visible (layout visible), show title and pics
     if (title.classList.contains('hidden')){
-        hideAllOverlays();
-        title.classList.remove('hidden');
+        hideAllOverlays(); 
+        toggleTitle();
         image.classList.remove('dimmed');
     }
-    
+    // De/activate icon & off-canvas
     toggleMenuIcon.classList.toggle('active');
     offCanvasMenu.classList.toggle('active');
 });
@@ -386,6 +387,8 @@ offCanvasMenuItems.forEach(item => {
     item.addEventListener('click', (event)=>{
         event.preventDefault();
         const menuText = item.textContent;
+        console.log(item);
+        console.log(menuText);
 
         // Close the off-canvas menu
         toggleMenuIcon.classList.remove('active');
@@ -409,9 +412,7 @@ offCanvasMenuItems.forEach(item => {
         showOverlay(targetOverlay);
 
         // Dim background & hide title
-        // title.classList.remove('visible');
-        toggleTitle();
         image.classList.add('dimmed');
-        // image.classList.add('hidden');
+        toggleTitle();
     });
 });
