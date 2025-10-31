@@ -1,7 +1,7 @@
 const image = document.querySelector('.slides-container');
 const title = document.querySelector('.title');
 
-const overlays = {    
+const overlays = {
     contact: document.querySelector('.contact'),
     kokedama: document.querySelector('.kokedama'),
     form: document.querySelector('.form'),
@@ -35,18 +35,18 @@ function isAnyOverlayVisible () {
 menuItemList.forEach( item => {
     item.addEventListener('click', () => {
         const menuItem = item.textContent;
-        
+
         // Map menu item to overlay names
         const menuMap = {
             'about & contact': 'contact',
             'what is kokedama': 'kokedama',
             'organise a workshop': 'form',
-            'workshops': 'workshops' 
+            'workshops': 'workshops'
         };
-        
+
         const targetOverlay = menuMap[menuItem];
         console.log('item', item);
-        console.log(menuItem); 
+        console.log(menuItem);
         console.log('menuItem', menuMap[menuItem]);
         console.log('targetOverlay', targetOverlay);
         console.log('menuMap', menuMap);
@@ -59,20 +59,17 @@ menuItemList.forEach( item => {
         if (isTargetVisible) {
             // Click the same item to hide it
             hideAllOverlays();
-            console.log('IF');
 
             image.classList.remove('dimmed');
             title.classList.remove('hidden');
             title.classList.add('visible');
         } else {
             // Show clicked overlay & hide the rest
-            console.log('ELSE');
             hideAllOverlays();
             showOverlay(targetOverlay);
-            
+
             // Dim background & hide title
             if (!image.classList.contains('dimmed')) {
-                console.log('IF - IF');
                 title.classList.remove('visible');
                 image.classList.add('dimmed');
                 title.classList.add('hidden');
@@ -84,7 +81,7 @@ menuItemList.forEach( item => {
 // Handler for home CTA
 document.querySelector('.btn-next-workshop').addEventListener('click', ()=> {
     hideAllOverlays();
-    image.classList.add('dimmed');               
+    image.classList.add('dimmed');
     title.classList.remove('visible');
     title.classList.add('hidden');
     showOverlay('workshops');
@@ -95,9 +92,9 @@ document.querySelector('.btn-next-workshop').addEventListener('click', ()=> {
 document.querySelector('.close-contact').addEventListener('click', ()=>{
     overlays.contact.classList.remove('visible');
     overlays.contact.classList.add('hidden');
-    
+
     if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');               
+        image.classList.remove('dimmed');
         title.classList.remove('hidden');
         title.classList.add('visible');
     }
@@ -106,9 +103,9 @@ document.querySelector('.close-contact').addEventListener('click', ()=>{
 document.querySelector('.close-kokedama').addEventListener('click', ()=>{
     overlays.kokedama.classList.remove('visible');
     overlays.kokedama.classList.add('hidden');
-    
+
     if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');               
+        image.classList.remove('dimmed');
         title.classList.remove('hidden');
         title.classList.add('visible');
     }
@@ -117,9 +114,9 @@ document.querySelector('.close-kokedama').addEventListener('click', ()=>{
 document.querySelector('.close-form').addEventListener('click', ()=>{
     overlays.form.classList.remove('visible');
     overlays.form.classList.add('hidden');
-    
+
     if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');               
+        image.classList.remove('dimmed');
         // title.classList.remove('hidden');
         // title.classList.add('visible');
         toggleTitle();
@@ -129,9 +126,9 @@ document.querySelector('.close-form').addEventListener('click', ()=>{
 document.querySelector('.close-workshops').addEventListener('click', ()=>{
     overlays.workshops.classList.remove('visible');
     overlays.workshops.classList.add('hidden');
-    
+
     if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');               
+        image.classList.remove('dimmed');
         // title.classList.remove('hidden');
         // title.classList.add('visible');
         toggleTitle();
@@ -145,32 +142,32 @@ document.addEventListener('keydown', (e)=> {
         hideAllOverlays();
         image.classList.remove('dimmed');
         toggleTitle();
-    } 
+    }
 })
 
 function toggleTitle (){
     title.classList.toggle('hidden');
-    title.classList.toggle('visible');    
+    title.classList.toggle('visible');
 }
 
 function toggleContact (){
     contact.classList.toggle('hidden');
-    contact.classList.toggle('visible');    
+    contact.classList.toggle('visible');
 }
 
 function toggleAbout (){
     about.classList.toggle('hidden');
-    about.classList.toggle('visible');    
+    about.classList.toggle('visible');
 }
 
 function toggleForm (){
     form.classList.toggle('hidden');
-    form.classList.toggle('visible');    
+    form.classList.toggle('visible');
 }
 
 function toggleWorkshops (){
     workshops.classList.toggle('hidden');
-    workshops.classList.toggle('visible');    
+    workshops.classList.toggle('visible');
 }
 
 
@@ -338,10 +335,10 @@ pastWorkshops.forEach(card => {
     const cardTitle = document.createElement('h4');
     cardTitle.classList.add('workshop-card__location');
     cardTitle.textContent = card.location;
-    
+
     const divCardDetails = document.createElement('div');
     divCardDetails.classList.add('workshop-card__details');
-    
+
     const cardCity = document.createElement('p');
     cardCity.classList.add('workshop-card__city');
     cardCity.textContent = card.city;
@@ -374,6 +371,12 @@ const offCanvasMenuItems = document.querySelectorAll('.ocm-item a');
 
 // Toggle menu on burger/X click
 toggleMenuIcon.addEventListener('click', () =>{
+    if (title.classList.contains('hidden')){
+        hideAllOverlays();
+        title.classList.remove('hidden');
+        image.classList.remove('dimmed');
+    }
+    
     toggleMenuIcon.classList.toggle('active');
     offCanvasMenu.classList.toggle('active');
 });
@@ -393,10 +396,11 @@ offCanvasMenuItems.forEach(item => {
             'about & contact': 'contact',
             'what is kokedama': 'kokedama',
             'organise a workshop': 'form',
-            'workshops': 'workshops' 
-        };      
+            'workshops': 'workshops'
+        };
 
         const targetOverlay = menuMap[menuText];
+        console.log(targetOverlay);
 
         if (!targetOverlay) return;
 
@@ -408,6 +412,6 @@ offCanvasMenuItems.forEach(item => {
         // title.classList.remove('visible');
         toggleTitle();
         image.classList.add('dimmed');
-        image.classList.add('hidden');
+        // image.classList.add('hidden');
     });
 });
