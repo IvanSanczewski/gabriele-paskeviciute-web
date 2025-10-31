@@ -95,8 +95,7 @@ document.querySelector('.close-contact').addEventListener('click', ()=>{
 
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');
-        title.classList.remove('hidden');
-        title.classList.add('visible');
+        toggleTitle();
     }
 });
 
@@ -106,31 +105,28 @@ document.querySelector('.close-kokedama').addEventListener('click', ()=>{
 
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');
-        title.classList.remove('hidden');
-        title.classList.add('visible');
+        toggleTitle();
     }
 });
 
 document.querySelector('.close-form').addEventListener('click', ()=>{
+    console.log('CLOSE');
     overlays.form.classList.remove('visible');
     overlays.form.classList.add('hidden');
 
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');
-        // title.classList.remove('hidden');
-        // title.classList.add('visible');
         toggleTitle();
     }
 });
 
 document.querySelector('.close-workshops').addEventListener('click', ()=>{
+    console.log('CLOSE');
     overlays.workshops.classList.remove('visible');
     overlays.workshops.classList.add('hidden');
 
     if (!isAnyOverlayVisible()){
         image.classList.remove('dimmed');
-        // title.classList.remove('hidden');
-        // title.classList.add('visible');
         toggleTitle();
     }
 });
@@ -150,32 +146,12 @@ function toggleTitle (){
     title.classList.toggle('visible');
 }
 
-function toggleContact (){
-    contact.classList.toggle('hidden');
-    contact.classList.toggle('visible');
+function toggleOverlays(overlay){
+    console.log(overlay);
+    overlay.classList.toggle('hidden');
+    overlay.classList.toggle('visible');
+
 }
-
-function toggleAbout (){
-    about.classList.toggle('hidden');
-    about.classList.toggle('visible');
-}
-
-function toggleForm (){
-    form.classList.toggle('hidden');
-    form.classList.toggle('visible');
-}
-
-function toggleWorkshops (){
-    workshops.classList.toggle('hidden');
-    workshops.classList.toggle('visible');
-}
-
-
-
-
-
-
-
 
 
 
