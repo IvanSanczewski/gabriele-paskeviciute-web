@@ -88,37 +88,75 @@ document.querySelector('.btn-next-workshop').addEventListener('click', ()=> {
 
 })
 
+
+
+
+// C L O S E //
+// C L O S E //
+
+// Close button map
+const closeBtnMap = {
+    'close-contact': 'contact',
+    'close-kokedama': 'kokedama',
+    'close-form': 'form',
+    'close-workshops': 'workshops',
+};
+
+// Close button handler
+Object.entries(closeBtnMap).forEach(([closeClass, overlay]) =>{
+    const closeBtn = document.querySelector(`.${closeClass}`);
+    console.log(closeBtnMap);
+    console.log(closeBtn);
+    console.log(closeClass);
+    console.log(overlay);
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () =>{
+            toggleOverlays(overlay);
+            console.log(overlay);
+
+            if (!isAnyOverlayVisible()) {
+                image.classList.remove('dimmed');
+                toggleTitle();
+            }
+        })
+    }
+});
+
+// 
+
+
 // Close button handlers
-document.querySelector('.close-contact').addEventListener('click', ()=>{
-    overlays.contact.classList.remove('visible');
-    overlays.contact.classList.add('hidden');
+// document.querySelector('.close-contact').addEventListener('click', ()=>{
+//     overlays.contact.classList.remove('visible');
+//     overlays.contact.classList.add('hidden');
 
-    if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');
-        toggleTitle();
-    }
-});
+//     if (!isAnyOverlayVisible()){
+//         image.classList.remove('dimmed');
+//         toggleTitle();
+//     }
+// });
 
-document.querySelector('.close-kokedama').addEventListener('click', ()=>{
-    overlays.kokedama.classList.remove('visible');
-    overlays.kokedama.classList.add('hidden');
+// document.querySelector('.close-kokedama').addEventListener('click', ()=>{
+//     overlays.kokedama.classList.remove('visible');
+//     overlays.kokedama.classList.add('hidden');
 
-    if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');
-        toggleTitle();
-    }
-});
+//     if (!isAnyOverlayVisible()){
+//         image.classList.remove('dimmed');
+//         toggleTitle();
+//     }
+// });
 
-document.querySelector('.close-form').addEventListener('click', ()=>{
-    console.log('CLOSE');
-    overlays.form.classList.remove('visible');
-    overlays.form.classList.add('hidden');
+// document.querySelector('.close-form').addEventListener('click', ()=>{
+//     console.log('CLOSE');
+//     overlays.form.classList.remove('visible');
+//     overlays.form.classList.add('hidden');
 
-    if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');
-        toggleTitle();
-    }
-});
+//     if (!isAnyOverlayVisible()){
+//         image.classList.remove('dimmed');
+//         toggleTitle();
+//     }
+// });
 
 document.querySelector('.close-workshops').addEventListener('click', ()=>{
     console.log('CLOSE');
@@ -148,8 +186,8 @@ function toggleTitle (){
 
 function toggleOverlays(overlay){
     console.log(overlay);
-    overlay.classList.toggle('hidden');
     overlay.classList.toggle('visible');
+    overlay.classList.toggle('hidden');
 
 }
 
