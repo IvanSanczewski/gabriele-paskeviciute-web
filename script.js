@@ -103,71 +103,30 @@ const closeBtnMap = {
 };
 
 // Close button handler
-Object.entries(closeBtnMap).forEach(([closeClass, overlay]) =>{
+Object.entries(closeBtnMap).forEach(([closeClass, overlayName]) =>{
     const closeBtn = document.querySelector(`.${closeClass}`);
-    console.log(closeBtnMap);
-    console.log(closeBtn);
-    console.log(closeClass);
-    console.log(overlay);
     
     if (closeBtn) {
         closeBtn.addEventListener('click', () =>{
-            toggleOverlays(overlay);
-            console.log(overlay);
+
+
+            // Add click & touchend for mobile
+            // event.preventDefault(); // Prevent any default behaviour
+            // event.stopPropagation(); // Stop event bubbling
+
+            toggleOverlays(overlayName);
 
             if (!isAnyOverlayVisible()) {
                 image.classList.remove('dimmed');
                 toggleTitle();
             }
         })
+        // closeBtn.addEventListener('click', handleClose);
+        // closeBtn.addEventListener('touchend', handleClose);
     }
 });
 
-// 
 
-
-// Close button handlers
-// document.querySelector('.close-contact').addEventListener('click', ()=>{
-//     overlays.contact.classList.remove('visible');
-//     overlays.contact.classList.add('hidden');
-
-//     if (!isAnyOverlayVisible()){
-//         image.classList.remove('dimmed');
-//         toggleTitle();
-//     }
-// });
-
-// document.querySelector('.close-kokedama').addEventListener('click', ()=>{
-//     overlays.kokedama.classList.remove('visible');
-//     overlays.kokedama.classList.add('hidden');
-
-//     if (!isAnyOverlayVisible()){
-//         image.classList.remove('dimmed');
-//         toggleTitle();
-//     }
-// });
-
-// document.querySelector('.close-form').addEventListener('click', ()=>{
-//     console.log('CLOSE');
-//     overlays.form.classList.remove('visible');
-//     overlays.form.classList.add('hidden');
-
-//     if (!isAnyOverlayVisible()){
-//         image.classList.remove('dimmed');
-//         toggleTitle();
-//     }
-// });
-
-document.querySelector('.close-workshops').addEventListener('click', ()=>{
-    console.log('CLOSE');
-    overlays.workshops.classList.remove('visible');
-    overlays.workshops.classList.add('hidden');
-
-    if (!isAnyOverlayVisible()){
-        image.classList.remove('dimmed');
-        toggleTitle();
-    }
-});
 
 
 // Escape key handler
@@ -184,11 +143,13 @@ function toggleTitle (){
     title.classList.toggle('visible');
 }
 
-function toggleOverlays(overlay){
+// Close chosen overlay
+function toggleOverlays(overlayName){
+    console.log(overlayName, typeof overlayName);
+    const overlay = overlays[overlayName];
     console.log(overlay);
     overlay.classList.toggle('visible');
     overlay.classList.toggle('hidden');
-
 }
 
 
