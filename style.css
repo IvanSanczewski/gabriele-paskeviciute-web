@@ -589,7 +589,7 @@ button:hover, button:focus {
 
     position: fixed;
     top: 0;
-    right: -450px; 
+    right: -450px;
 
     transition: .3s ease;
     z-index: 12;
@@ -613,7 +613,7 @@ button:hover, button:focus {
 nav {
     display: flex;
     justify-content: end;
-    
+
     width: 100vw;
     padding: 2em;
     background-color: transparent;
@@ -628,9 +628,9 @@ nav {
 .menu-toggle {
     width: 35px;
     height: 35px;
-    
+
     position: relative;
-    cursor: pointer;    
+    cursor: pointer;
     z-index: 20;
 }
 
@@ -694,7 +694,7 @@ nav {
 
     .image-slider {
         width: calc(100% - var(--margin-slider__mobile));
-        height: calc(100% - var(--margin-slider__mobile)); 
+        height: calc(100% - var(--margin-slider__mobile));
     }
 
     .title h1 {
@@ -716,19 +716,49 @@ nav {
 /* *** A B O U T   O V E R L A Y *** */
 
     .contact {
-        gap: 0.5em;
-        
-        width: 92vw;
-        height: calc(100% - 5vh);
-        
-        position: absolute;
-        top: 5vh;
-        left: 0; 
-
         padding-right: 0.5em; /* More space for scrollbar on mobile */
+        gap: 0.5em;
+
+        width: 94vw;
+        /* height: calc(100% - 5vh); */
+
+        /* width: calc(100vw - var(--margin-slider__mobile)); */
+        height: calc(100vh - var(--margin-slider__mobile));
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
         -webkit-overflow-scrolling: touch;
-    }        
+    }
+
+    /* Chrome/Safari scrollbar for .contact */
+    .contact::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+    }
+
+    .contact::-webkit-scrollbar-thumb {
+        background: var(--color-main);
+        border-radius: 10px;
+    }
+
+    /* Firefox scrollbar for .contact */
+    .contact {
+        scrollbar-color: var(--color-main) transparent;
+        scrollbar-width: thin;
+    }
+
     
+
+
+
+    .contact-header{
+        padding-top: 2em;
+    }
+
     .contact-info {
         display: flex;
         flex-direction: column;
