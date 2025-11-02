@@ -212,7 +212,7 @@ img {
     width: 55vw;
     position: absolute;
     top: 8vh;
-    left: 22.50vw;
+    left: calc(22.50vw - var(--margin-slider)/2);
 }
 
 .contact-header {
@@ -222,21 +222,31 @@ img {
     align-items: baseline;
 }
 
-.contact-info {
+.contact-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3.5em;
 }
 
-.contact-photo {
+/* .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5em;
+} */
+
+/* .contact-photo {
     min-width: 400px;
     min-height: 400px;
-}
+
+} */
 
 .contact-details {
-    padding-left: 1em
+    margin-top: 1em
 }
 
+.contact-details h3 {
+    line-height: 2rem;
+}
 
 
 
@@ -734,6 +744,7 @@ nav {
         -webkit-overflow-scrolling: touch;
     }
 
+
     /* Chrome/Safari scrollbar for .contact */
     .contact::-webkit-scrollbar {
         width: 8px;
@@ -742,7 +753,20 @@ nav {
 
     .contact::-webkit-scrollbar-thumb {
         background: var(--color-main);
-        border-radius: 10px;
+        border-radius: 4px;
+    }
+
+    .contact::-webkit-scrollbar-button {
+        background: var(--color-main);
+        height: 12px;
+    }
+
+    .contact::-webkit-scrollbar-button:vertical:decrement {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .contact::-webkit-scrollbar-button:vertical:increment {
+        border-radius: 0 0 4px 4px;
     }
 
     /* Firefox scrollbar for .contact */
@@ -751,32 +775,48 @@ nav {
         scrollbar-width: thin;
     }
 
-    
-
-
-
     .contact-header{
         padding-top: 2em;
     }
 
-    .contact-info {
+    .contact-body {
         display: flex;
         flex-direction: column;
-        gap: 0.5em;
+        gap: 1.5em;
+    }
+
+    .contact-personal {
+        display: flex;
+        flex-direction: column;
+        gap: .65em
+    }
+
+    .contact-details {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .contact-details h3, .contact-details p{
+        line-height: 1.5rem;
     }
 
     .contact-photo {
         min-height: auto;
     }
-
+    
     .contact-photo img {
-        width: 85%;
+        width: 90%;
         margin: 0 auto;
     }
-
+    
     .contact-info p {
-        padding: 0 1em;
+        padding: 0 1.15em;
     }
-
+    
+    /* .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    } */
 
 }
