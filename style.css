@@ -367,6 +367,7 @@ button:hover, button:focus {
     background-color: var(--color-main);
 }
 
+
 /* ***  W O R K S H O P S  *** */
 /* ***  W O R K S H O P S  *** */
 
@@ -709,4 +710,40 @@ nav {
     .arrow-btn {
         display: none;
     }
+
+
+/* *** A B O U T   O V E R L A Y *** */
+/* *** A B O U T   O V E R L A Y *** */
+
+    .contact {
+        gap: 0.5em;
+        
+        width: 92vw;
+        
+        position: absolute;
+        top: 5vh;
+        left: 0; 
+
+    }        
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .contact-photo {
+        min-height: auto;
+    }
+
+    .contact-photo img {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .contact-info p {
+        padding: 0 1em;
+    }
+
+
 }
