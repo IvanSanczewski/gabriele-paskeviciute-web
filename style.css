@@ -819,4 +819,55 @@ nav {
         gap: 0.5em;
     } */
 
+
+
+/* *** K O K E D A M A   O V E R L A Y *** */
+/* *** K O K E D A M A   O V E R L A Y *** */
+    
+
+
+    .kokedama {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25em;
+        
+        width: 94vw;
+        position: absolute;
+        top: 3vh;
+        left: 0;
+    }
+
+    .kokedama-info {
+        padding-right: 0.5em; /* More space for scrollbar on mobile */
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    .kokedama-photo {
+        min-height: auto;
+    }
+    
+    .kokedama-photo img {
+        width: 90%;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
