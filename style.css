@@ -15,10 +15,11 @@
     margin: 0;
     padding: 0;
 
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    line-height: 1.75;
 }
 
 body, html {
@@ -832,17 +833,61 @@ nav {
         gap: 1.25em;
         
         width: 94vw;
+        height: calc(100vh - var(--margin-slider__mobile));
+
         position: absolute;
-        top: 3vh;
+        top: 0;
         left: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
     }
+
+    /* Chrome/Safari scrollbar for .kokedama */
+    .kokedama::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+    }
+
+    .kokedama::-webkit-scrollbar-thumb {
+        background: var(--color-main);
+        border-radius: 4px;
+    }
+
+    .kokedama::-webkit-scrollbar-button {
+        background: var(--color-main);
+        height: 12px;
+    }
+
+    .kokedama::-webkit-scrollbar-button:vertical:decrement {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .kokedama::-webkit-scrollbar-button:vertical:increment {
+        border-radius: 0 0 4px 4px;
+    }
+
+    /* Firefox scrollbar for .kokedama */
+    .kokedama {
+        scrollbar-color: var(--color-main) transparent;
+        scrollbar-width: thin;
+    }
+
+    .kokedama-header{
+        padding-top: 2em;
+    }
+
 
     .kokedama-info {
         padding-right: 0.5em; /* More space for scrollbar on mobile */
-        gap: 0.5em;
         display: flex;
         flex-direction: column;
+        gap: 1.5em;
+    }
 
+    .kokedama-info p {
+        padding: 0 1.15em;
     }
     
     .kokedama-photo {
