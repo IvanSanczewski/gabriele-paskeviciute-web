@@ -342,6 +342,11 @@ textarea {
     appearance: none;
 }
 
+.comments {
+    height: 4em;
+    width: 75ch;
+}
+
 textarea::placeholder {
     font-size: 0.85em;
     font-weight: 300;
