@@ -41,6 +41,7 @@
         
         <div class="content">
             <div class="contact hidden">
+                <div class="contact-container">
                     <div class="contact-header">
                         <h2>About me</h2>
                         <span class="close close-contact">close</span> 
@@ -63,24 +64,27 @@
                             </p>
                         </div>
                     </div>
+                </div>
             </div>
             
             <div class="kokedama hidden">
-                <div class="kokedama-header">
-                    <h2>All about Kokedama</h2>
-                    <span class="close close-kokedama">close</span> 
-                </div>
-                <div class="kokedama-info">
-                    <div class="kokedama-photo">
-                        <img src="/assets/ISP_KOKEDAMA_WSP_394.jpg" alt="Portrait Gabriele">
+                <div class="kokedama-container">
+                    <div class="kokedama-header">
+                        <h2>All about Kokedama</h2>
+                        <span class="close close-kokedama">close</span> 
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+                    <div class="kokedama-info">
+                        <div class="kokedama-photo">
+                            <img src="/assets/ISP_KOKEDAMA_WSP_394.jpg" alt="Portrait Gabriele">
+                        </div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
 
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
-                    </p>
-                    <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, fugit iure hic repellat dicta fugiat recusandae similique! Eum nam error temporibus eaque labore accusamus! Dolorem suscipit eum voluptates exercitationem dolorum nesciunt odit aliquid autem adipisci quisquam nihil quis, sequi nemo temporibus omnis quos, voluptatibus, odio minima! Itaque tempore quis deserunt tempora, nostrum magnam! Et, perferendis quam nam saepe provident sint consequatur delectus mollitia commodi, ea velit quaerat debitis amet soluta. Id maiores labore modi, omnis sit quidem quisquam distinctio tempore nemo, similique iure molestias, porro odit rerum molestiae aut consectetur voluptatibus sapiente inventore architecto iusto. Nemo doloribus dolore incidunt eveniet.
-                    </p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, magni dolorem voluptates vitae ducimus rerum eius laudantium? Sit, reiciendis quod porro ab suscipit, maiores, voluptatem itaque dolores id alias eligendi!
+                        </p>
+                        <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, fugit iure hic repellat dicta fugiat recusandae similique! Eum nam error temporibus eaque labore accusamus! Dolorem suscipit eum voluptates exercitationem dolorum nesciunt odit aliquid autem adipisci quisquam nihil quis, sequi nemo temporibus omnis quos, voluptatibus, odio minima! Itaque tempore quis deserunt tempora, nostrum magnam! Et, perferendis quam nam saepe provident sint consequatur delectus mollitia commodi, ea velit quaerat debitis amet soluta. Id maiores labore modi, omnis sit quidem quisquam distinctio tempore nemo, similique iure molestias, porro odit rerum molestiae aut consectetur voluptatibus sapiente inventore architecto iusto. Nemo doloribus dolore incidunt eveniet.
+                        </p>
+                    </div>
                 </div>
             </div>            
             
@@ -95,7 +99,7 @@
             </div>
                 
             <form class="form hidden" method="POST" action="send.php">
-                <!-- <div class="form-container"> -->
+                <div class="form-container-organise">
                     <div class="form-header">
                         <h2>I want to organise a workshop:</h2>
                         <p class="close close-form">close</p>
@@ -121,7 +125,7 @@
                         <div class="form-input">
                             <textarea name="date" id="date" cols="35" rows="1" placeholder="Desired Date"></textarea>
                         </div>
-                    </div>
+.                    </div>
                     
                     <div class="form-row">
                         <div class="form-input">
@@ -139,7 +143,7 @@
                     </div>
 
                     <button>SEND REQUEST</button>
-                <!-- </div> -->
+                </div>
             </form>
 
             <div class="workshops hidden">

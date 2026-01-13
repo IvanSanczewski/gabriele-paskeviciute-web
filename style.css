@@ -207,13 +207,17 @@ img {
 
 .contact {
     display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    display: flex;
     flex-direction: column;
     gap: 1.25em;
 
     width: 55vw;
     position: absolute;
-    top: 8vh;
-    left: calc(22.50vw - var(--margin-slider)/2);
+    top: 0;
 }
 
 .contact-header {
@@ -256,13 +260,17 @@ img {
 
 .kokedama {
     display: flex;
+    justify-content: center;
+}
+
+.kokedama-container {
+    display: flex;
     flex-direction: column;
     gap: 1.25em;
 
     width: 55vw;
     position: absolute;
-    top: 8vh;
-    left: 22.50vw;
+    top: 0;
 }
 
 .kokedama-header {
@@ -290,12 +298,16 @@ img {
 
 .form {
     display: flex;
+    justify-content: center;
+}
+
+.form-container-organise {
+    display: flex;
     flex-direction: column;
     justify-content: center;
 
     position: absolute;
-    top: 18vh;
-    left: 22.50vw;
+    top: 0;
 
     gap: .55em;
     width: 55vw;
@@ -419,7 +431,7 @@ button:hover, button:focus {
     margin-top: 3em;
 }
 
-.workshops h2 {
+.workshops h2, .contact h2, .kokedama h2, .form h2 {
     margin-top: 1.8em;
 }
 
