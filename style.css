@@ -1,13 +1,18 @@
 :root {
     --margin-slider: 5.75em;
     --margin-slider__mobile: 1.75em;
+    --container-padding__horizontal: 5em;
+    
     --image-border: 0.5em;
+    
     --opacity-image: 0.15;
 
     --color-main: rgb(162, 196, 153);
     --color-selected:  rgb(27, 67, 17);
     --color-background: rgb(5, 28, 18);
     --color-background-title: rgb(5, 28, 18, 0.5);
+
+
 }
 
 * {
