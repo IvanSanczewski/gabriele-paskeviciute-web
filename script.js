@@ -34,41 +34,21 @@ function isAnyOverlayVisible () {
 // Click menu item
 menuItemList.forEach( item => {
     item.addEventListener('click', () => {
-        const menuItem = item.textContent;
-
-        // Map menu item to overlay names
-        const menuMap = {
-            'about & contact': 'contact',
-            'what is kokedama': 'kokedama',
-            'organise a workshop': 'form',
-            'workshops': 'workshops'
-        };
-
-        const targetOverlay = menuMap[menuItem];
-        console.log('item', item);
-        console.log(menuItem);
-        console.log('menuItem', menuMap[menuItem]);
-        console.log('targetOverlay', targetOverlay);
-        console.log('menuMap', menuMap);
+        const targetOverlay = item.dataset.overlay;
 
         if (!targetOverlay) return;
 
         const isTargetVisible = !overlays[targetOverlay].classList.contains('hidden');
-        console.log(isTargetVisible);
 
         if (isTargetVisible) {
-            // Click the same item to hide it
             hideAllOverlays();
-
             image.classList.remove('dimmed');
             title.classList.remove('hidden');
             title.classList.add('visible');
         } else {
-            // Show clicked overlay & hide the rest
             hideAllOverlays();
             showOverlay(targetOverlay);
 
-            // Dim background & hide title
             if (!image.classList.contains('dimmed')) {
                 title.classList.remove('visible');
                 image.classList.add('dimmed');
@@ -361,33 +341,141 @@ toggleMenuIcon.addEventListener('click', () =>{
 offCanvasMenuItems.forEach(item => {
     item.addEventListener('click', (event)=>{
         event.preventDefault();
-        const menuText = item.textContent;
-        console.log(item);
-        console.log(menuText);
+        const targetOverlay = item.dataset.overlay;
 
         // Close the off-canvas menu
         toggleMenuIcon.classList.remove('active');
         offCanvasMenu.classList.remove('active');
 
-        // Map menu item to overlay names
-        const menuMap = {
-            'about & contact': 'contact',
-            'what is kokedama': 'kokedama',
-            'organise a workshop': 'form',
-            'workshops': 'workshops'
-        };
-
-        const targetOverlay = menuMap[menuText];
-        console.log(targetOverlay);
-
         if (!targetOverlay) return;
 
-        // Show the correspnding overlay
+        // Show the corresponding overlay
         hideAllOverlays();
         showOverlay(targetOverlay);
 
         // Dim background & hide title
         image.classList.add('dimmed');
-        toggleTitle();
+        if (title.classList.contains('visible')) toggleTitle();
     });
 });
+
+
+
+// L A N G U A G E   S E L E C T O R //
+// L A N G U A G E   S E L E C T O R //
+
+const translations = {
+    en: {
+        'menu.contact': 'about & contact',
+        'menu.kokedama': 'what is kokedama',
+        'menu.form': 'organise a workshop',
+        'menu.workshops': 'workshops',
+        'close': 'close',
+        'contact.heading': 'About me',
+        'kokedama.heading': 'All about Kokedama',
+        'title.h1': 'KOKEDAMA WORKSHOPS',
+        'title.nextWorkshop': 'Next Workshop',
+        'title.nextDate': 'Miesto Laboratorija, Vilnius -  8th November',
+        'title.join': 'JOIN!',
+        'form.heading': 'I want to organise a workshop:',
+        'form.explanation': 'If you want to organise a workshop for your company, institution, organisation, family or group of friends, please use the form and I will contact you in less than 24 hours.',
+        'form.company': 'Company Name',
+        'form.participants': 'Number of Participants',
+        'form.city': 'City',
+        'form.date': 'Desired Date',
+        'form.email': 'Email',
+        'form.telephone': 'Telephone Number',
+        'form.comments': 'Comments, questions or any special requirements...',
+        'form.send': 'SEND REQUEST',
+        'form.name': 'Name',
+        'form.surname': 'Surname',
+        'workshops.heading': 'Workshops',
+        'workshops.past': 'Past Workshops',
+        'workshops.upcoming': 'Upcoming Workshops',
+        'workshops.upcomingDate': 'Miesto Laboratorija - 8th November',
+        'workshops.joinHeading': 'I want to join this workshop',
+    },
+    lt: {
+        'menu.contact': 'apie & kontaktai',
+        'menu.kokedama': 'kas yra kokedama',
+        'menu.form': 'organizuoti seminarą',
+        'menu.workshops': 'seminarai',
+        'close': 'uždaryti',
+        'contact.heading': 'Apie mane',
+        'kokedama.heading': 'Viskas apie Kokedama',
+        'title.h1': 'KOKEDAMA SEMINARAI',
+        'title.nextWorkshop': 'Artimausias seminaras',
+        'title.nextDate': 'Miesto Laboratorija, Vilnius - lapkričio 8 d.',
+        'title.join': 'DALYVAUTI!',
+        'form.heading': 'Noriu organizuoti seminarą:',
+        'form.explanation': 'Jei norite organizuoti seminarą savo įmonei, institucijai, organizacijai, šeimai ar draugų grupei, prašome naudotis šia forma ir susisieksiu su jumis per 24 valandas.',
+        'form.company': 'Įmonės pavadinimas',
+        'form.participants': 'Dalyvių skaičius',
+        'form.city': 'Miestas',
+        'form.date': 'Pageidaujama data',
+        'form.email': 'El. paštas',
+        'form.telephone': 'Telefono numeris',
+        'form.comments': 'Komentarai, klausimai ar ypatingi pageidavimai...',
+        'form.send': 'SIŲSTI UŽKLAUSĄ',
+        'form.name': 'Vardas',
+        'form.surname': 'Pavardė',
+        'workshops.heading': 'Seminarai',
+        'workshops.past': 'Praėję seminarai',
+        'workshops.upcoming': 'Artimiausi seminarai',
+        'workshops.upcomingDate': 'Miesto Laboratorija - lapkričio 8 d.',
+        'workshops.joinHeading': 'Noriu dalyvauti šiame seminare',
+    }
+};
+
+const FLAGS = { en: '🇬🇧', lt: '🇱🇹' };
+
+let currentLang = localStorage.getItem('lang') || 'en';
+
+function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+
+    const t = translations[lang];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.dataset.i18nPh;
+        if (t[key] !== undefined) el.placeholder = t[key];
+    });
+
+    document.getElementById('currentFlag').textContent = FLAGS[lang];
+
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.lang === lang);
+    });
+}
+
+const langSelector = document.getElementById('langSelector');
+const langBtn = document.getElementById('langBtn');
+const langDropdown = document.getElementById('langDropdown');
+
+langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('open');
+});
+
+document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyLanguage(opt.dataset.lang);
+        langDropdown.classList.remove('open');
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!langSelector.contains(e.target)) {
+        langDropdown.classList.remove('open');
+    }
+});
+
+applyLanguage(currentLang);
